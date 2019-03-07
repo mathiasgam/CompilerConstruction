@@ -7,6 +7,9 @@
 // Single line comment -- ignored
 "//" {~("\n"|"\r")} ("\n"|"\r"["\n"])
 
+// Multi line comment
+"/*" {~("*/")} ("*/"])
+
 // Reserved words
 ABSTRACT    ::= "abstract"
 BOOLEAN     ::= "boolean"
@@ -32,6 +35,8 @@ THIS        ::= "this"
 TRUE        ::= "true"
 VOID        ::= "void"
 WHILE       ::= "while"
+BREAK       ::= "break"
+BYTE        ::= "byte"
 
 // Operators
 ASSIGN      ::= "="
@@ -48,6 +53,13 @@ STAR        ::= "*"
 DIV         ::= "/"
 REM         ::= "%"
 LSHIFT      ::= "<<"
+RShift      ::= ">>"
+RLOGSHIFT   ::= ">>>"
+UNACOMP     ::= "~"
+BOR         ::= "|"
+BXOR        ::= "^"
+BAND        ::= "&"
+
 
 // Separators
 COMMA       ::= ","

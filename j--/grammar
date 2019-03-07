@@ -72,8 +72,14 @@ expression ::= assignmentExpression
 assignmentExpression ::= conditionalAndExpression  // must be a valid lhs
                            [(ASSIGN | PLUS_ASSIGN) assignmentExpression]
 
-conditionalAndExpression ::= equalityExpression // level 10
-                               {LAND equalityExpression}
+conditionalAndExpression ::= bitwiseOrExpression // level 10
+                               {LAND bitwiseOrExpression}
+
+bitwiseOrExpression ::= bitwiseXORExpression {BOR bitwiseXORExpression} // level 9
+
+bitwiseXORExpression ::= bitwiseANDExpression {BXOR bitwiseANDExpression} // level 8
+
+bitwiseANDExpression ::= equalityExpression {BAND equalityExpression} // level 7
 
 equalityExpression ::= relationalExpression  // level 6
                          {EQUAL relationalExpression}
@@ -82,7 +88,7 @@ relationalExpression ::= shiftExpressions       // level 5
                            [(GT | LE) shiftExpressions
                            | INSTANCEOF referenceType]
 
-shiftExpressions ::= additiveExpression {(LSHIFT) additiveExpression} // level 4
+shiftExpressions ::= additiveExpression {(LSHIFT | RSHIFT | RLOGSHIFT) additiveExpression} // level 4
 
 additiveExpression ::= multiplicativeExpression // level 3
                          {(PLUS | MINUS) multiplicativeExpression}
