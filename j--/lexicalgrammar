@@ -64,26 +64,43 @@ TRY         ::= "try"
 VOLATILE    ::= "volatile"
 
 // Operators
-ASSIGN      ::= "="
-EQUAL       ::= "=="
-GT          ::= ">"
-INC         ::= "++"
-LAND        ::= "&&"
-LE          ::= "<="
-LNOT        ::= "!"
-MINUS       ::= "-"
-PLUS        ::= "+"
-PLUS_ASSIGN ::= "+="
-STAR        ::= "*"
-DIV         ::= "/"
-REM         ::= "%"
-LSHIFT      ::= "<<"
-RShift      ::= ">>"
-RLOGSHIFT   ::= ">>>"
-UNACOMP     ::= "~"
-BOR         ::= "|"
-BXOR        ::= "^"
-BAND        ::= "&"
+ASSIGN          ::= "="
+EQUAL           ::= "=="
+GT              ::= ">"
+INC             ::= "++"
+LAND            ::= "&&"
+LE              ::= "<="
+LNOT            ::= "!"
+MINUS           ::= "-"
+PLUS            ::= "+"
+PLUS_ASSIGN     ::= "+="
+STAR            ::= "*"
+DIV             ::= "/"
+REM             ::= "%"
+LSHIFT          ::= "<<"
+RShift          ::= ">>"
+RLOGSHIFT       ::= ">>>"
+UNACOMP         ::= "~"
+BOR             ::= "|"
+BXOR            ::= "^"
+BAND            ::= "&"
+TCON            ::= "?"
+NOTEQUAL        ::= "!="
+DIVASSIGN       ::= "/="
+SUBEQUAL        ::= "-="
+DEC             ::= "--"
+MULASSIGN       ::= "*=" //
+REMASSIGN       ::= "%=" //
+RSHIFTASSIGN    ::= ">>=" //
+RLOGSHIFASSIGN  ::= ">>>=" //
+GE              ::= ">=" //
+LSHIFTASSIGN    ::= "<<=" //
+LT              ::= "<<<" //
+BXORASSIGN      ::= "^=" //
+BORASSIGN       ::= "|=" //
+OR              ::= "||" //
+BANDASSIGN      ::= "&=" //
+
 
 
 // Separators
@@ -96,6 +113,7 @@ RBRACK      ::= "]"
 RCURLY      ::= "}"
 RPAREN      ::= ")"
 SEMI        ::= ";"
+COL         ::= ":"
 
 // Identifiers
 IDENTIFIER ::= ("a"-"z"|"A"-"Z"|"_"|"$") {"a"-"z"|"A"-"Z"|"_"|"0"-"9"|"$"}

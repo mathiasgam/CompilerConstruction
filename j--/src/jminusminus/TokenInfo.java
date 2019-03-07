@@ -22,7 +22,7 @@ enum TokenKind {
             "("), RPAREN(")"), LCURLY("{"), RCURLY("}"), LBRACK("["), RBRACK(
             "]"), SEMI(";"), COMMA(","), DOT("."), IDENTIFIER("<IDENTIFIER>"), INT_LITERAL(
             "<INT_LITERAL>"), CHAR_LITERAL("<CHAR_LITERAL>"), STRING_LITERAL(
-            "<STRING_LITERAL>"), LSHIFT("<<"), RSHIFT(">>"), RLOGSHIFT(">>>"), BOR("|"), BXOR("^"), BAND("&"),BREAK("break"), BYTE("byte"), CASE("case"), CATCH("catch"), CONST("const"), CONTINUE("continue"), DEFAULT("default"), DO("do"), DOUBLE("double"), FINAL("final"), FINALLY("finally"), FLOAT("float"), FOR("for"), GOTO("goto"), IMPLEMENTS("implements"), INTERFACE("interface"), LONG("long"), NATIVE("native"), SHORT("short"), STRICTFP("strictfp"), SWITCH("switch"), SYNCHRONIZED("synchronized"), THROW("throw"), THROWS("throws"), TRANSIENT("transient"), TRY("try"), VOLATILE("volatile");
+            "<STRING_LITERAL>"), LSHIFT("<<"), RSHIFT(">>"), RLOGSHIFT(">>>"), BOR("|"), BXOR("^"), BAND("&"),BREAK("break"), BYTE("byte"), CASE("case"), CATCH("catch"), CONST("const"), CONTINUE("continue"), DEFAULT("default"), DO("do"), DOUBLE("double"), FINAL("final"), FINALLY("finally"), FLOAT("float"), FOR("for"), GOTO("goto"), IMPLEMENTS("implements"), INTERFACE("interface"), LONG("long"), NATIVE("native"), SHORT("short"), STRICTFP("strictfp"), SWITCH("switch"), SYNCHRONIZED("synchronized"), THROW("throw"), THROWS("throws"), TRANSIENT("transient"), TRY("try"), VOLATILE("volatile"), COL(":"), TCON("?"),NOTEQUAL("!="), DIVASSIGN("/="), SUBEQUAL("-=");
 
     /** The token's string representation. */
     private String image;

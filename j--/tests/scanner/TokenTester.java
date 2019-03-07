@@ -44,5 +44,18 @@ public class ShiftLeft {
         }
         final int x;
 
+        int fisk = x != 2 ? 5 : 1;
+
+        int x = 100;
+        x -= 1;
+        x %= 7;
+        x /= 2;
+        x--;
+        x -= 2;
+        boolean y = x >= 10 || False;
+        int z = y ? 2 : 0;
+
+
+
     }
 }

@@ -131,17 +131,20 @@ class Scanner {
                     while (ch != '\n' && ch != EOFCH) {
                         nextCh();
                     }
-                } else if (ch == '*'){ // remove multi line comments
-                    while (ch != EOFCH){
+                } else if (ch == '*') { // remove multi line comments
+                    while (ch != EOFCH) {
                         nextCh();
-                        if (ch == '*'){
+                        if (ch == '*') {
                             nextCh();
-                            if (ch == '/'){
+                            if (ch == '/') {
                                 nextCh();
                                 break;
                             }
                         }
                     }
+                } else if (ch == '='){
+                    nextCh();
+                    return new TokenInfo(DIVASSIGN, line);
                 } else {
                     return new TokenInfo(DIV, line);
                 }
@@ -185,7 +188,12 @@ class Scanner {
             }
         case '!':
             nextCh();
-            return new TokenInfo(LNOT, line);
+            if (ch == '='){
+                nextCh();
+                return new TokenInfo(NOTEQUAL, line);
+            }else {
+                return new TokenInfo(LNOT, line);
+            }
         case '*':
             nextCh();
             return new TokenInfo(STAR, line);
@@ -208,6 +216,9 @@ class Scanner {
             if (ch == '-') {
                 nextCh();
                 return new TokenInfo(DEC, line);
+            } else if (ch == '='){
+                nextCh();
+                return new TokenInfo(SUBEQUAL, line);
             } else {
                 return new TokenInfo(MINUS, line);
             }
@@ -250,6 +261,12 @@ class Scanner {
         case '^':
             nextCh();
             return new TokenInfo(BXOR, line);
+        case '?':
+            nextCh();
+            return new TokenInfo(TCON, line);
+        case ':':
+            nextCh();
+            return new TokenInfo(COL, line);
         case '\'':
             buffer = new StringBuffer();
             buffer.append('\'');
