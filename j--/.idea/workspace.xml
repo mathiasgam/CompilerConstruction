@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="344f5323-caf1-46eb-9cc3-8dbeba019462" name="Default Changelist" comment="" />
+    <list default="true" id="344f5323-caf1-46eb-9cc3-8dbeba019462" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/tests/junit/ShiftLeftTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/CharReader.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/CharReader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/Scanner.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/Scanner.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/TokenKind.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/TokenKind.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/j--.jar" beforeDir="false" afterPath="$PROJECT_DIR$/lib/j--.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jminusminus/Scanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jminusminus/Scanner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jminusminus/TokenInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jminusminus/TokenInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/junit/JMinusMinusTestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/junit/JMinusMinusTestRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/pass/HelloWorld2.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/pass/HelloWorld2.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,18 +25,16 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/jminusminus/TokenInfo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="3" lean-forward="true" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
+            <state relative-caret-position="357">
+              <caret line="24" column="44" selection-start-line="24" selection-start-column="44" selection-end-line="24" selection-end-column="44" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/lexicalgrammar">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/jminusminus/Token.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="49" column="1" selection-start-line="49" selection-start-column="1" selection-end-line="49" selection-end-column="1" />
-            </state>
+            <state relative-caret-position="-889" />
           </provider>
         </entry>
       </file>
@@ -33,7 +42,7 @@
         <entry file="file://$PROJECT_DIR$/tests/pass/Division.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="187">
-              <caret line="11" column="1" lean-forward="true" selection-end-line="11" selection-end-column="1" />
+              <caret line="11" column="1" selection-end-line="11" selection-end-column="1" />
               <folding>
                 <element signature="e#100#101#0" expanded="true" />
                 <element signature="e#128#129#0" expanded="true" />
@@ -43,10 +52,15 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/jminusminus/Type.java">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/pass/ShiftLeft.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+            <state relative-caret-position="51">
+              <caret line="3" column="22" lean-forward="true" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="22" />
               <folding>
                 <element signature="e#105#106#0" expanded="true" />
                 <element signature="e#134#135#0" expanded="true" />
@@ -56,15 +70,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/pass/Factorial.java">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/junit/DivisionTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="10" lean-forward="true" selection-end-line="22" selection-end-column="1" />
+            <state relative-caret-position="280">
+              <caret line="22" column="1" lean-forward="true" selection-end-line="22" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -72,20 +81,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tests/pass/HelloWorld2.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="136">
-              <caret line="8" column="61" selection-start-line="8" selection-start-column="61" selection-end-line="8" selection-end-column="61" />
+              <caret line="8" column="59" selection-start-line="8" selection-start-column="59" selection-end-line="8" selection-end-column="59" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grammar">
+        <entry file="file://$PROJECT_DIR$/tests/junit/ShiftLeftTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="85" lean-forward="true" selection-start-line="85" selection-end-line="85" />
+            <state relative-caret-position="51">
+              <caret line="3" column="21" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -93,20 +102,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/jminusminus/Scanner.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1904">
-              <caret line="156" column="44" selection-start-line="156" selection-start-column="44" selection-end-line="156" selection-end-column="44" />
+            <state relative-caret-position="103">
+              <caret line="195" column="51" selection-start-line="195" selection-start-column="51" selection-end-line="195" selection-end-column="51" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/junit/RemainderTest.java">
+        <entry file="file://$PROJECT_DIR$/tests/junit/JMinusMinusTestRunner.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="155">
-              <caret line="21" column="55" selection-start-line="21" selection-start-column="55" selection-end-line="21" selection-end-column="55" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="357">
+              <caret line="25" column="48" selection-start-line="25" selection-start-column="48" selection-end-line="25" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -116,7 +122,11 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>multi</find>
+      <find>&lt;</find>
     </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -125,26 +135,28 @@
         <option value="$PROJECT_DIR$/tests/junit/Division.java" />
         <option value="$PROJECT_DIR$/tests/pass/Remainder.java" />
         <option value="$PROJECT_DIR$/tests/fail/Remainder.java" />
-        <option value="$PROJECT_DIR$/src/jminusminus/TokenInfo.java" />
-        <option value="$PROJECT_DIR$/src/jminusminus/Scanner.java" />
         <option value="$PROJECT_DIR$/src/jminusminus/Parser.java" />
         <option value="$PROJECT_DIR$/src/jminusminus/JBinaryExpression.java" />
         <option value="$PROJECT_DIR$/tests/pass/Division.java" />
-        <option value="$PROJECT_DIR$/tests/junit/JMinusMinusTestRunner.java" />
         <option value="$PROJECT_DIR$/tests/junit/RemainderTest.java" />
-        <option value="$PROJECT_DIR$/tests/pass/HelloWorld2.java" />
         <option value="$PROJECT_DIR$/tests/pass/Shift.java" />
         <option value="$PROJECT_DIR$/tests/pass/ShiftLeft.java" />
         <option value="$PROJECT_DIR$/grammar" />
         <option value="$PROJECT_DIR$/lexicalgrammar" />
+        <option value="$PROJECT_DIR$/tests/junit/JMinusMinusTestRunner.java" />
+        <option value="$PROJECT_DIR$/src/jminusminus/TokenInfo.java" />
+        <option value="$PROJECT_DIR$/src/jminusminus/Scanner.java" />
+        <option value="$PROJECT_DIR$/tests/junit/ShiftLeftTest.java" />
+        <option value="$PROJECT_DIR$/tests/pass/HelloWorld2.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-12" />
+    <option name="x" value="-18" />
     <option name="width" value="1944" />
-    <option name="height" value="2104" />
+    <option name="height" value="2106" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -171,7 +183,18 @@
             <path>
               <item name="j--" type="b2602c69:ProjectViewProjectNode" />
               <item name="j--" type="462c0819:PsiDirectoryNode" />
+              <item name="pass" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="j--" type="b2602c69:ProjectViewProjectNode" />
+              <item name="j--" type="462c0819:PsiDirectoryNode" />
               <item name="tests" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="j--" type="b2602c69:ProjectViewProjectNode" />
+              <item name="j--" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
+              <item name="junit" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="j--" type="b2602c69:ProjectViewProjectNode" />
@@ -190,8 +213,8 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551350538688" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/build.xml" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551945160771" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -211,7 +234,7 @@
     <configuration name="j--" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="jminusminus.Main" />
       <module name="j--" />
-      <option name="PROGRAM_PARAMETERS" value="-t tests/pass/Remainder.java" />
+      <option name="PROGRAM_PARAMETERS" value="-t tests/pass/ShiftLeft.java" />
       <method v="2" />
     </configuration>
   </component>
@@ -227,11 +250,15 @@
       <updated>1550136126442</updated>
       <workItem from="1550136127973" duration="6422000" />
       <workItem from="1551344918427" duration="5078000" />
+      <workItem from="1551350791307" duration="36000" />
+      <workItem from="1551350944708" duration="26000" />
+      <workItem from="1551350995851" duration="33000" />
+      <workItem from="1551943683205" duration="1432000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11500000" />
+    <option name="totallyTimeSpent" value="13027000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -246,7 +273,7 @@
     <frame x="-6" y="-6" width="1719" height="942" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13108839" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13589898" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -255,7 +282,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.27798277" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.27798277" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -265,7 +292,7 @@
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.3296433" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.5830258" />
+      <window_info anchor="bottom" id="Messages" order="12" visible="true" weight="0.5830258" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" visible="true" weight="0.09200241" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -313,17 +340,6 @@
         <state relative-caret-position="-2824" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/fail/Division.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="37" selection-start-line="6" selection-start-column="37" selection-end-line="6" selection-end-column="37" />
-          <folding>
-            <element signature="e#108#109#0" expanded="true" />
-            <element signature="e#126#127#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/pass/Remainder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -333,17 +349,6 @@
             <element signature="e#139#140#0" expanded="true" />
             <element signature="e#182#183#0" expanded="true" />
             <element signature="e#231#232#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/fail/Remainder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="37" selection-start-line="6" selection-start-column="37" selection-end-line="6" selection-end-column="37" />
-          <folding>
-            <element signature="e#108#109#0" expanded="true" />
-            <element signature="e#128#129#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -395,16 +400,6 @@
     <entry file="file://$PROJECT_DIR$/tests/pass/IntFactorial.java">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/pass/HelloWorld.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/junit/JMinusMinusTestRunner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="24" column="48" selection-start-line="24" selection-start-column="48" selection-end-line="24" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pass/Factorial.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -412,23 +407,60 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/jminusminus/Scanner.java">
+    <entry file="file://$PROJECT_DIR$/grammar">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1904">
-          <caret line="156" column="44" selection-start-line="156" selection-start-column="44" selection-end-line="156" selection-end-column="44" />
+        <state relative-caret-position="1445">
+          <caret line="85" selection-start-line="85" selection-end-line="85" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/jminusminus/TokenInfo.java">
+    <entry file="file://$PROJECT_DIR$/lexicalgrammar">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="3" lean-forward="true" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
+        <state relative-caret-position="322">
+          <caret line="49" column="20" selection-start-line="49" selection-start-column="20" selection-end-line="49" selection-end-column="20" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/fail/Division.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="37" selection-start-line="6" selection-start-column="37" selection-end-line="6" selection-end-column="37" />
+          <folding>
+            <element signature="e#108#109#0" expanded="true" />
+            <element signature="e#152#153#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/fail/Remainder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="37" selection-start-line="6" selection-start-column="37" selection-end-line="6" selection-end-column="37" />
+          <folding>
+            <element signature="e#108#109#0" expanded="true" />
+            <element signature="e#152#153#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/junit/FactorialTest.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/pass/Factorial.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/pass/HelloWorld.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/junit/ScannerTest.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/junit/ParserTest.java">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/junit/RemainderTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
+        <state relative-caret-position="357">
           <caret line="21" column="55" selection-start-line="21" selection-start-column="55" selection-end-line="21" selection-end-column="55" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -436,41 +468,67 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/pass/HelloWorld2.java">
+    <entry file="file://$PROJECT_DIR$/tests/junit/SeriesTest.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/junit/JMinusMinusTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="61" selection-start-line="8" selection-start-column="61" selection-end-line="8" selection-end-column="61" />
+        <state relative-caret-position="-884" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/junit/JMinusMinusTestJavaCC.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/junit/JMinusMinusTestRunner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="25" column="48" selection-start-line="25" selection-start-column="48" selection-end-line="25" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jminusminus/Token.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-889" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jminusminus/Type.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jminusminus/TokenInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="24" column="44" selection-start-line="24" selection-start-column="44" selection-end-line="24" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jminusminus/Scanner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="103">
+          <caret line="195" column="51" selection-start-line="195" selection-start-column="51" selection-end-line="195" selection-end-column="51" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/junit/DivisionTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="10" lean-forward="true" selection-end-line="22" selection-end-column="1" />
+        <state relative-caret-position="280">
+          <caret line="22" column="1" lean-forward="true" selection-end-line="22" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/pass/Division.java">
+    <entry file="file://$PROJECT_DIR$/tests/junit/ShiftLeftTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="1" lean-forward="true" selection-end-line="11" selection-end-column="1" />
-          <folding>
-            <element signature="e#100#101#0" expanded="true" />
-            <element signature="e#128#129#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="51">
+          <caret line="3" column="21" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/pass/Factorial.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/pass/ShiftLeft.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+        <state relative-caret-position="51">
+          <caret line="3" column="22" lean-forward="true" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="22" />
           <folding>
             <element signature="e#105#106#0" expanded="true" />
             <element signature="e#134#135#0" expanded="true" />
@@ -478,17 +536,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grammar">
+    <entry file="file://$PROJECT_DIR$/tests/pass/Division.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="85" lean-forward="true" selection-start-line="85" selection-end-line="85" />
+        <state relative-caret-position="187">
+          <caret line="11" column="1" selection-end-line="11" selection-end-column="1" />
+          <folding>
+            <element signature="e#100#101#0" expanded="true" />
+            <element signature="e#128#129#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lexicalgrammar">
+    <entry file="file://$PROJECT_DIR$/tests/pass/HelloWorld2.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="49" column="1" selection-start-line="49" selection-start-column="1" selection-end-line="49" selection-end-column="1" />
+        <state relative-caret-position="136">
+          <caret line="8" column="59" selection-start-line="8" selection-start-column="59" selection-end-line="8" selection-end-column="59" />
         </state>
       </provider>
     </entry>
