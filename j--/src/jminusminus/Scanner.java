@@ -196,10 +196,20 @@ class Scanner {
             }
         case '*':
             nextCh();
-            return new TokenInfo(STAR, line);
+            if (ch == '='){
+                nextCh();
+                return new TokenInfo(MULASSIGN, line);
+            }else{
+                return new TokenInfo(STAR, line);
+            }
         case '%':
             nextCh();
-            return new TokenInfo(REM, line);
+            if (ch == '='){
+                nextCh();
+                return new TokenInfo(REMASSIGN, line);
+            }else{
+                return new TokenInfo(REM, line);
+            }
         case '+':
             nextCh();
             if (ch == '=') {
@@ -227,19 +237,33 @@ class Scanner {
             if (ch == '&') {
                 nextCh();
                 return new TokenInfo(LAND, line);
+            } else if (ch == '='){
+                nextCh();
+                return new TokenInfo(BANDASSIGN, line);
             } else {
                 return new TokenInfo(BAND, line);
             }
         case '>':
             nextCh();
-            if (ch == '>'){
+            if (ch == '>') {
                 nextCh();
-                if (ch == '>'){
+                if (ch == '>') {
                     nextCh();
-                    return new TokenInfo(RLOGSHIFT, line);
+                    if (ch == '=') {
+                        nextCh();
+                        return new TokenInfo(RLOGSHIFASSIGN, line);
+                    } else {
+                        return new TokenInfo(RLOGSHIFT, line);
+                    }
+                } else if (ch == '=') {
+                    nextCh();
+                    return new TokenInfo(RSHIFTASSIGN, line);
                 } else {
                     return new TokenInfo(RSHIFT, line);
                 }
+            }else if (ch == '='){
+                nextCh();
+                return new TokenInfo(GE, line);
             }else {
                 return new TokenInfo(GT, line);
             }
@@ -250,17 +274,35 @@ class Scanner {
                 return new TokenInfo(LE, line);
             } else if (ch == '<') {
                 nextCh();
-                return new TokenInfo(LSHIFT, line);
+                if (ch == '='){
+                    nextCh();
+                    return new TokenInfo(LSHIFTASSIGN, line);
+                } else {
+                    return new TokenInfo(LSHIFT, line);
+                }
             } else {
                 reportScannerError("Operator < is not supported in j--.");
                 return getNextToken();
             }
         case '|':
             nextCh();
-            return new TokenInfo(BOR, line);
+            if (ch == '=') {
+                nextCh();
+                return new TokenInfo(BORASSIGN, line);
+            }else if (ch == '|'){
+                nextCh();
+                return new TokenInfo(OR, line);
+            }else{
+                return new TokenInfo(BOR, line);
+            }
         case '^':
             nextCh();
-            return new TokenInfo(BXOR, line);
+            if (ch == '='){
+                nextCh();
+                return new TokenInfo(BXORASSIGN, line);
+            } else {
+                return new TokenInfo(BXOR, line);
+            }
         case '?':
             nextCh();
             return new TokenInfo(TCON, line);

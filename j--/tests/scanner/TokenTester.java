@@ -55,6 +55,16 @@ public class ShiftLeft {
         boolean y = x >= 10 || False;
         int z = y ? 2 : 0;
 
+        x *= 5;
+        x %= 2;
+        x >>= 1;
+        x >>>= 2;
+        boolean b = x >= y;
+        x <<= 2;
+        b |= True;
+        b ^= False;
+        b = True || False;
+        b &= True;
 
 
     }

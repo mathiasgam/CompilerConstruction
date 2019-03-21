@@ -89,16 +89,15 @@ NOTEQUAL        ::= "!="
 DIVASSIGN       ::= "/="
 SUBEQUAL        ::= "-="
 DEC             ::= "--"
-MULASSIGN       ::= "*=" //
-REMASSIGN       ::= "%=" //
-RSHIFTASSIGN    ::= ">>=" //
-RLOGSHIFASSIGN  ::= ">>>=" //
-GE              ::= ">=" //
-LSHIFTASSIGN    ::= "<<=" //
-LT              ::= "<<<" //
-BXORASSIGN      ::= "^=" //
-BORASSIGN       ::= "|=" //
-OR              ::= "||" //
+MULASSIGN       ::= "*="
+REMASSIGN       ::= "%="
+RSHIFTASSIGN    ::= ">>="
+RLOGSHIFASSIGN  ::= ">>>="
+GE              ::= ">="
+LSHIFTASSIGN    ::= "<<="
+BXORASSIGN      ::= "^="
+BORASSIGN       ::= "|="
+OR              ::= "||"
 BANDASSIGN      ::= "&=" //
 
 
