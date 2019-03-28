@@ -69,8 +69,11 @@ statementExpression ::= expression // but must have side-effect, eg i++
 
 expression ::= assignmentExpression
 
-assignmentExpression ::= conditionalAndExpression  // must be a valid lhs
-                           [(ASSIGN | PLUS_ASSIGN) assignmentExpression]
+assignmentExpression ::= conditionalOrExpression  // must be a valid lhs
+                           [(ASSIGN | PLUS_ASSIGN | SUBEQUAL | DIVASSIGN | MULASSIGN | REMASSIGN) assignmentExpression]
+
+conditionalOrExpression ::= conditionalAndExpression // level 11
+                               {OR conditionalAndExpression}
 
 conditionalAndExpression ::= bitwiseOrExpression // level 10
                                {LAND bitwiseOrExpression}
@@ -105,7 +108,9 @@ simpleUnaryExpression ::= LNOT unaryExpression
                         | LPAREN // casted               
                             referenceType
                           RPAREN simpleUnaryExpression
-                        | postfixExpression 
+                        | postfixExpression
+
+prefixExpression ::= {INC} primary {selector}
 
 postfixExpression ::= primary {selector} {DEC}
 
