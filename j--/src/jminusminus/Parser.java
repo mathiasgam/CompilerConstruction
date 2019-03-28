@@ -1005,6 +1005,14 @@ public class Parser {
             return new JAssignOp(line, lhs, assignmentExpression());
         } else if (have(PLUS_ASSIGN)) {
             return new JPlusAssignOp(line, lhs, assignmentExpression());
+        } else if (have(SUBEQUAL)) {
+            return new JMinusAssignOp(line, lhs, assignmentExpression());
+        } else if (have(MULASSIGN)) {
+            return new JMulAssignOp(line, lhs, assignmentExpression());
+        } else if (have(DIVASSIGN)) {
+            return new JDivAssignOp(line, lhs, assignmentExpression());
+        } else if (have(REMASSIGN)) {
+            return new JRemAssignOp(line, lhs, assignmentExpression());
         } else {
             return lhs;
         }
