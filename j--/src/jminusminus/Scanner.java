@@ -365,6 +365,48 @@ class Scanner {
         case '0':
             // Handle only simple decimal integers for now.
             nextCh();
+            buffer = new StringBuffer();
+            if (ch == '.') {
+                buffer.append(ch);
+                nextCh();
+                if (isDigit(ch)) {
+                    while (isDigit(ch)) {
+                        buffer.append(ch);
+                        nextCh();
+                    }
+                    if (ch == 'd' | ch == 'D') {
+                        buffer.append(ch);
+                        nextCh();
+                        return new TokenInfo(DOUBLE_LITERAL, buffer.toString(), line);
+                    } else if (ch != 'e') {
+                        reportScannerError("Expected \"d\" found \"%s\"",ch);
+                    }
+                }
+                else
+                    reportScannerError("Unexpected token found in fraction");
+            }
+            if (ch == 'e') {
+                buffer.append(ch);
+                nextCh();
+                if(ch == '+' || ch == '-') {
+                    buffer.append(ch);
+                    nextCh();
+                }
+                if (isDigit(ch)) {
+                    while (isDigit(ch)) {
+                        buffer.append(ch);
+                        nextCh();
+                    }
+                    if (ch == 'd' | ch == 'D') {
+                        buffer.append(ch);
+                        nextCh();
+                        return new TokenInfo(DOUBLE_LITERAL, buffer.toString(), line);
+                    } else {
+                        reportScannerError("Expected \"d\" found \"%s\"",ch);
+                    }
+                } else
+                    reportScannerError("Unexpected token found in exponential");
+            }
             return new TokenInfo(INT_LITERAL, "0", line);
         case '1':
         case '2':

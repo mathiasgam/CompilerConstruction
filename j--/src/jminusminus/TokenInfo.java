@@ -63,6 +63,8 @@ enum TokenKind {
     INT_LITERAL("<INT_LITERAL>"),
     CHAR_LITERAL("<CHAR_LITERAL>"),
     STRING_LITERAL("<STRING_LITERAL>"),
+    DOUBLE_LITERAL( "<DOUBLE_LITERAL>"),
+    EXP("e"),
     LSHIFT("<<"),
     RSHIFT(">>"),
     RLOGSHIFT(">>>"),

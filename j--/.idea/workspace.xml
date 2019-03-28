@@ -2,16 +2,179 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="344f5323-caf1-46eb-9cc3-8dbeba019462" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/jminusminus/JLiteralDouble.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/AmbiguousName.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/AmbiguousName.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/ArrayTypeName.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/ArrayTypeName.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/Boxing.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/Boxing.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/ByteClassLoader.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/ByteClassLoader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/CLAnnotation.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/CLAnnotation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/CLAnnotationDefaultAttribute.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/CLAnnotationDefaultAttribute.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/CLArithmeticInstruction.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/CLArithmeticInstruction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/CLArrayInstruction.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/CLArrayInstruction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/CLAttributeInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/CLAttributeInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/CLBitInstruction.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/CLBitInstruction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/CLBranchStack.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/CLBranchStack.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/CLBranchTarget.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/CLBranchTarget.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/CLCPInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/CLCPInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/CLCodeAttribute.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/CLCodeAttribute.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/CLComparisonInstruction.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/CLComparisonInstruction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/CLConstantClassInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/CLConstantClassInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/CLConstantDoubleInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/CLConstantDoubleInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/CLConstantFieldRefInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/CLConstantFieldRefInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/CLConstantFloatInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/CLConstantFloatInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/CLConstantIntegerInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/CLConstantIntegerInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/CLConstantInterfaceMethodRefInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/CLConstantInterfaceMethodRefInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/CLConstantLongInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/CLConstantLongInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/CLConstantMemberRefInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/CLConstantMemberRefInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/CLConstantMethodRefInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/CLConstantMethodRefInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/CLConstantNameAndTypeInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/CLConstantNameAndTypeInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/CLConstantPool.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/CLConstantPool.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/CLConstantStringInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/CLConstantStringInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/CLConstantUtf8Info.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/CLConstantUtf8Info.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/CLConstantValueAttribute.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/CLConstantValueAttribute.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/CLConstants$Category.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/CLConstants$Category.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/CLConstants.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/CLConstants.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/CLConversionInstruction.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/CLConversionInstruction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/CLDeprecatedAttribute.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/CLDeprecatedAttribute.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/CLElementValue.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/CLElementValue.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/CLElementValuePair.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/CLElementValuePair.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/CLEmitter$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/CLEmitter$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/CLEmitter.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/CLEmitter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/CLEnclosingMethodAttribute.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/CLEnclosingMethodAttribute.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/CLException.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/CLException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/CLExceptionInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/CLExceptionInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/CLExceptionsAttribute.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/CLExceptionsAttribute.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/CLFieldInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/CLFieldInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/CLFieldInstruction.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/CLFieldInstruction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/CLFile.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/CLFile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/CLFlowControlInstruction.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/CLFlowControlInstruction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/CLInnerClassInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/CLInnerClassInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/CLInnerClassesAttribute.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/CLInnerClassesAttribute.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/CLInsInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/CLInsInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/CLInstruction.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/CLInstruction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/CLLineNumberInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/CLLineNumberInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/CLLineNumberTableAttribute.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/CLLineNumberTableAttribute.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/CLLoadStoreInstruction.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/CLLoadStoreInstruction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/CLLocalVariableInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/CLLocalVariableInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/CLLocalVariableTableAttribute.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/CLLocalVariableTableAttribute.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/CLLocalVariableTypeInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/CLLocalVariableTypeInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/CLLocalVariableTypeTableAttribute.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/CLLocalVariableTypeTableAttribute.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/CLMemberInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/CLMemberInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/CLMethodInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/CLMethodInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/CLMethodInstruction.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/CLMethodInstruction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/CLMiscInstruction.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/CLMiscInstruction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/CLObjectInstruction.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/CLObjectInstruction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/CLOutputStream.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/CLOutputStream.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/CLParameterAnnotationInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/CLParameterAnnotationInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/CLRuntimeInvisibleAnnotationsAttribute.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/CLRuntimeInvisibleAnnotationsAttribute.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/CLRuntimeInvisibleParameterAnnotationsAttribute.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/CLRuntimeInvisibleParameterAnnotationsAttribute.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/CLRuntimeVisibleAnnotationsAttribute.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/CLRuntimeVisibleAnnotationsAttribute.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/CLRuntimeVisibleParameterAnnotationsAttribute.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/CLRuntimeVisibleParameterAnnotationsAttribute.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/CLSignatureAttribute.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/CLSignatureAttribute.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/CLSourceDebugExtensionAttribute.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/CLSourceDebugExtensionAttribute.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/CLSourceFileAttribute.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/CLSourceFileAttribute.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/CLStackInstruction.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/CLStackInstruction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/CLSyntheticAttribute.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/CLSyntheticAttribute.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/jminusminus/CharReader.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/CharReader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/ClassContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/ClassContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/CompilationUnitContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/CompilationUnitContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/Constructor.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/Constructor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/Context.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/Context.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/Conversions.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/Conversions.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/Converter.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/Converter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/Field.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/Field.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/I2C.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/I2C.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/IDefn.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/IDefn.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/Identity.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/Identity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/JAST.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/JAST.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/JArrayExpression.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/JArrayExpression.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/JArrayInitializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/JArrayInitializer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/JAssignOp.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/JAssignOp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/JAssignment.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/JAssignment.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/JBinaryExpression.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/JBinaryExpression.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/JBlock.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/JBlock.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/JBooleanBinaryExpression.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/JBooleanBinaryExpression.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/JCastOp.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/JCastOp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/JClassDeclaration.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/JClassDeclaration.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/JComparison.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/JComparison.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/JCompilationUnit.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/JCompilationUnit.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/JConstructorDeclaration.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/JConstructorDeclaration.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/JDivideOp.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/JDivideOp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/JEmptyStatement.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/JEmptyStatement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/JEqualOp.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/JEqualOp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/JExpression.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/JExpression.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/JFieldDeclaration.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/JFieldDeclaration.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/JFieldSelection.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/JFieldSelection.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/JFormalParameter.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/JFormalParameter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/JGreaterThanOp.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/JGreaterThanOp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/JIfStatement.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/JIfStatement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/JInstanceOfOp.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/JInstanceOfOp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/JLessEqualOp.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/JLessEqualOp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/JLhs.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/JLhs.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/JLiteralChar.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/JLiteralChar.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/JLiteralFalse.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/JLiteralFalse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/JLiteralInt.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/JLiteralInt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/JLiteralNull.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/JLiteralNull.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/JLiteralString.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/JLiteralString.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/JLiteralTrue.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/JLiteralTrue.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/JLogicalAndOp.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/JLogicalAndOp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/JLogicalNotOp.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/JLogicalNotOp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/JMember.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/JMember.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/JMessageExpression.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/JMessageExpression.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/JMethodDeclaration.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/JMethodDeclaration.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/JMultiplyOp.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/JMultiplyOp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/JNegateOp.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/JNegateOp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/JNewArrayOp.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/JNewArrayOp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/JNewOp.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/JNewOp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/JPlusAssignOp.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/JPlusAssignOp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/JPlusOp.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/JPlusOp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/JPostDecrementOp.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/JPostDecrementOp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/JPreIncrementOp.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/JPreIncrementOp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/JRemainderOp.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/JRemainderOp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/JReturnStatement.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/JReturnStatement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/JStatement.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/JStatement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/JStatementExpression.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/JStatementExpression.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/JStringConcatenationOp.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/JStringConcatenationOp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/JSubtractOp.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/JSubtractOp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/JSuper.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/JSuper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/JSuperConstruction.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/JSuperConstruction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/JThis.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/JThis.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/JThisConstruction.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/JThisConstruction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/JTypeDecl.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/JTypeDecl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/JUnaryExpression.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/JUnaryExpression.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/JVariable.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/JVariable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/JVariableDeclaration.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/JVariableDeclaration.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/JVariableDeclarator.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/JVariableDeclarator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/JWhileStatement.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/JWhileStatement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/JWildExpression.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/JWildExpression.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/LocalContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/LocalContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/LocalVariableDefn.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/LocalVariableDefn.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/LookaheadScanner.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/LookaheadScanner.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/Member.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/Member.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/Method.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/Method.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/MethodContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/MethodContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/NarrowReference.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/NarrowReference.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/Parser.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/Parser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/PrettyPrinter.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/PrettyPrinter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/jminusminus/Scanner.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/Scanner.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/jminusminus/TokenInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/TokenInfo.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/jminusminus/TokenKind.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/TokenKind.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/Type.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/Type.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/TypeName.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/TypeName.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/TypeNameDefn.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/TypeNameDefn.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/UnBoxing.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/UnBoxing.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/jminusminus/Util.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/jminusminus/Util.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grammar" beforeDir="false" afterPath="$PROJECT_DIR$/grammar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lexicalgrammar" beforeDir="false" afterPath="$PROJECT_DIR$/lexicalgrammar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/j--.jar" beforeDir="false" afterPath="$PROJECT_DIR$/lib/j--.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/spim.jar" beforeDir="false" afterPath="$PROJECT_DIR$/lib/spim.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jminusminus/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jminusminus/Parser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/jminusminus/Scanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jminusminus/Scanner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/jminusminus/TokenInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jminusminus/TokenInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/scanner/TokenTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/scanner/TokenTester.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jminusminus/Type.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jminusminus/Type.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/scanner/Literals.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/scanner/Literals.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,8 +188,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/jminusminus/TokenInfo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="421">
-              <caret line="112" column="21" lean-forward="true" selection-start-line="112" selection-start-column="21" selection-end-line="112" selection-end-column="21" />
+            <state relative-caret-position="162">
+              <caret line="66" column="13" selection-start-line="66" selection-start-column="13" selection-end-line="66" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -34,20 +197,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lexicalgrammar">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="376">
-              <caret line="100" column="10" selection-start-line="100" selection-end-line="100" selection-end-column="10" />
+            <state relative-caret-position="458">
+              <caret line="130" column="39" selection-start-line="130" selection-start-column="39" selection-end-line="130" selection-end-column="39" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/scanner/TokenTester.java">
+        <entry file="file://$PROJECT_DIR$/src/jminusminus/Parser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="421">
-              <caret line="66" column="18" selection-start-line="66" selection-start-column="18" selection-end-line="66" selection-end-column="18" />
+            <state relative-caret-position="-2158">
+              <caret line="1250" column="19" selection-start-line="1250" selection-start-column="12" selection-end-line="1250" selection-end-column="19" />
               <folding>
-                <element signature="e#105#106#0" expanded="true" />
-                <element signature="e#134#135#0" expanded="true" />
+                <element signature="e#1623#1624#0" expanded="true" />
+                <element signature="e#1680#1681#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -56,52 +219,96 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/jminusminus/Scanner.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="241" column="55" selection-start-line="241" selection-start-column="55" selection-end-line="241" selection-end-column="55" />
+            <state relative-caret-position="251">
+              <caret line="380" column="40" selection-start-line="380" selection-start-column="40" selection-end-line="380" selection-end-column="40" />
               <folding>
-                <element signature="e#15210#15211#0" expanded="true" />
-                <element signature="e#16288#16289#0" expanded="true" />
-                <element signature="e#16476#16477#0" expanded="true" />
-                <element signature="e#16640#16641#0" expanded="true" />
+                <element signature="e#16863#16864#0" expanded="true" />
+                <element signature="e#17941#17942#0" expanded="true" />
+                <element signature="e#18129#18130#0" expanded="true" />
+                <element signature="e#18293#18294#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/junit/JMinusMinusTestRunner.java">
+        <entry file="file://$PROJECT_DIR$/tests/scanner/Literals.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="25" column="10" selection-start-line="25" selection-start-column="10" selection-end-line="25" selection-end-column="10" />
+            <state relative-caret-position="90">
+              <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/junit/JMinusMinusTest.java">
+        <entry file="file://$PROJECT_DIR$/src/jminusminus/Token.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/jminusminus/JLiteralDouble.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="474">
+              <caret line="35" column="65" selection-start-line="35" selection-start-column="65" selection-end-line="35" selection-end-column="65" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/jminusminus/JLiteralChar.java">
           <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/jminusminus/Type.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="480">
+              <caret line="36" column="58" selection-start-line="36" selection-start-column="46" selection-end-line="36" selection-end-column="58" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>multi</find>
-      <find>&lt;</find>
-      <find>&quot;&gt;&quot;</find>
-      <find>'^'</find>
-      <find>'&amp;'</find>
-      <find>'/'</find>
-      <find>':'</find>
-      <find>'!</find>
-      <find>'/</find>
-      <find>'-</find>
       <find>'*'</find>
       <find>'&gt;</find>
       <find>'&lt;</find>
       <find>'|</find>
       <find>^</find>
       <find>'|'</find>
+      <find>INT_LITERAL</find>
+      <find>int_literal</find>
+      <find>&lt;INT_LITERAL&gt;</find>
+      <find>int_li</find>
+      <find>seeBasicType</find>
+      <find>it does not have a</find>
+      <find>int</find>
+      <find>type sought where</find>
+      <find>type  so</find>
+      <find>the following</find>
+      <find>scanning</find>
+      <find>does not have a side</find>
+      <find>basicType</find>
+      <find>doy=</find>
+      <find>it does not have</find>
+      <find>mustbe</find>
+      <find>sought</find>
+      <find>found where</find>
+      <find>e</find>
+      <find>/</find>
+      <find>'/'</find>
+      <find>exp</find>
+      <find>mustBe(</find>
+      <find>'='</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -114,7 +321,6 @@
         <option value="$PROJECT_DIR$/tests/junit/Division.java" />
         <option value="$PROJECT_DIR$/tests/pass/Remainder.java" />
         <option value="$PROJECT_DIR$/tests/fail/Remainder.java" />
-        <option value="$PROJECT_DIR$/src/jminusminus/Parser.java" />
         <option value="$PROJECT_DIR$/src/jminusminus/JBinaryExpression.java" />
         <option value="$PROJECT_DIR$/tests/pass/Division.java" />
         <option value="$PROJECT_DIR$/tests/junit/RemainderTest.java" />
@@ -123,19 +329,22 @@
         <option value="$PROJECT_DIR$/tests/pass/HelloWorld2.java" />
         <option value="$PROJECT_DIR$/tests/junit/JMinusMinusTestRunner.java" />
         <option value="$PROJECT_DIR$/tests/pass/ShiftLeft.java" />
+        <option value="$PROJECT_DIR$/tests/scanner/TokenTester.java" />
+        <option value="$PROJECT_DIR$/src/jminusminus/Type.java" />
+        <option value="$PROJECT_DIR$/src/jminusminus/JLiteralDouble.java" />
         <option value="$PROJECT_DIR$/grammar" />
+        <option value="$PROJECT_DIR$/src/jminusminus/Parser.java" />
         <option value="$PROJECT_DIR$/lexicalgrammar" />
         <option value="$PROJECT_DIR$/src/jminusminus/TokenInfo.java" />
-        <option value="$PROJECT_DIR$/tests/scanner/TokenTester.java" />
+        <option value="$PROJECT_DIR$/tests/scanner/Literals.java" />
         <option value="$PROJECT_DIR$/src/jminusminus/Scanner.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-14" />
-    <option name="y" value="-14" />
-    <option name="width" value="1944" />
-    <option name="height" value="2104" />
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
+    <option name="width" value="1680" />
+    <option name="height" value="1027" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -153,18 +362,7 @@
             <path>
               <item name="j--" type="b2602c69:ProjectViewProjectNode" />
               <item name="j--" type="462c0819:PsiDirectoryNode" />
-              <item name="outputfolder" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="j--" type="b2602c69:ProjectViewProjectNode" />
-              <item name="j--" type="462c0819:PsiDirectoryNode" />
-              <item name="outputfolder" type="462c0819:PsiDirectoryNode" />
-              <item name="pass" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="j--" type="b2602c69:ProjectViewProjectNode" />
-              <item name="j--" type="462c0819:PsiDirectoryNode" />
-              <item name="pass" type="462c0819:PsiDirectoryNode" />
+              <item name="classes" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="j--" type="b2602c69:ProjectViewProjectNode" />
@@ -205,11 +403,14 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553158769625" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553762299012" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -227,7 +428,7 @@
     <configuration name="j--" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="jminusminus.Main" />
       <module name="j--" />
-      <option name="PROGRAM_PARAMETERS" value="-t tests/scanner/TokenTester.java" />
+      <option name="PROGRAM_PARAMETERS" value="-t tests/scanner/Literals.java" />
       <method v="2" />
     </configuration>
   </component>
@@ -264,10 +465,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-6" y="-6" width="1719" height="942" extended-state="6" />
+    <frame x="0" y="23" width="1680" height="1027" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.102224894" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13064714" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -276,7 +477,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.27675277" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.27700534" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -286,9 +487,9 @@
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.3296433" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.27675277" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.27593583" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" visible="true" weight="0.16355982" />
+      <window_info anchor="right" id="Ant Build" order="1" visible="true" weight="0.14163615" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.249549" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Database" order="4" />
@@ -360,11 +561,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/jminusminus/j--.jj">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-714" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/j--.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -419,9 +615,6 @@
     <entry file="file://$PROJECT_DIR$/tests/junit/FactorialTest.java">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/pass/Factorial.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/pass/HelloWorld.java">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -447,31 +640,12 @@
     <entry file="file://$PROJECT_DIR$/tests/junit/JMinusMinusTestJavaCC.java">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/jminusminus/Token.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-889" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/jminusminus/Type.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/junit/DivisionTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="280">
           <caret line="22" column="1" lean-forward="true" selection-end-line="22" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/pass/Division.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="1" selection-end-line="11" selection-end-column="1" />
-          <folding>
-            <element signature="e#100#101#0" expanded="true" />
-            <element signature="e#128#129#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -502,16 +676,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/scanner/Literals.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/jminusminus/Parser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="1134" column="69" selection-start-line="1134" selection-start-column="69" selection-end-line="1134" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/scanner/Operators.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -521,7 +685,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/junit/JMinusMinusTestRunner.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
+        <state relative-caret-position="315">
           <caret line="25" column="10" selection-start-line="25" selection-start-column="10" selection-end-line="25" selection-end-column="10" />
         </state>
       </provider>
@@ -529,31 +693,10 @@
     <entry file="file://$PROJECT_DIR$/tests/junit/JMinusMinusTest.java">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/grammar">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="77" column="82" lean-forward="true" selection-start-line="77" selection-start-column="82" selection-end-line="77" selection-end-column="82" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/jminusminus/TokenInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
-          <caret line="112" column="21" lean-forward="true" selection-start-line="112" selection-start-column="21" selection-end-line="112" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lexicalgrammar">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="100" column="10" selection-start-line="100" selection-end-line="100" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/scanner/TokenTester.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
-          <caret line="66" column="18" selection-start-line="66" selection-start-column="18" selection-end-line="66" selection-end-column="18" />
+        <state relative-caret-position="765">
+          <caret line="53" column="15" selection-start-line="53" selection-start-column="15" selection-end-line="53" selection-end-column="15" />
           <folding>
             <element signature="e#105#106#0" expanded="true" />
             <element signature="e#134#135#0" expanded="true" />
@@ -561,18 +704,218 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/jminusminus/Scanner.java">
+    <entry file="file://$PROJECT_DIR$/classes/pass/Division.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="241" column="55" selection-start-line="241" selection-start-column="55" selection-end-line="241" selection-end-column="55" />
+        <state>
           <folding>
-            <element signature="e#15210#15211#0" expanded="true" />
-            <element signature="e#16288#16289#0" expanded="true" />
-            <element signature="e#16476#16477#0" expanded="true" />
-            <element signature="e#16640#16641#0" expanded="true" />
+            <element signature="e#0#256#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/jminusminus/JCastOp.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jminusminus/JLiteralInt.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="21" column="18" selection-end-line="94" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jminusminus/JExpression.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-89" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/javadoc/index-all.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="3633" column="75" selection-start-line="3633" selection-start-column="75" selection-end-line="3633" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jminusminus/j--.jj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="1663" column="8" selection-start-line="1663" selection-start-column="8" selection-end-line="1663" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grammar">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="62" column="31" selection-start-line="62" selection-start-column="31" selection-end-line="62" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jminusminus/JLiteralChar.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jminusminus/Type.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="36" column="58" selection-start-line="36" selection-start-column="46" selection-end-line="36" selection-end-column="58" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/pass/Factorial.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/j--.jar!/jminusminus/Parser.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="410">
+          <caret line="567" column="42" lean-forward="true" selection-start-line="567" selection-start-column="42" selection-end-line="567" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lexicalgrammar">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="458">
+          <caret line="130" column="39" selection-start-line="130" selection-start-column="39" selection-end-line="130" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/pass/Division.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+          <folding>
+            <element signature="e#100#101#0" expanded="true" />
+            <element signature="e#128#129#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jminusminus/JLiteralDouble.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="474">
+          <caret line="35" column="65" selection-start-line="35" selection-start-column="65" selection-end-line="35" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jminusminus/Token.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jminusminus/TokenInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="66" column="13" selection-start-line="66" selection-start-column="13" selection-end-line="66" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jminusminus/Parser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2158">
+          <caret line="1250" column="19" selection-start-line="1250" selection-start-column="12" selection-end-line="1250" selection-end-column="19" />
+          <folding>
+            <element signature="e#1623#1624#0" expanded="true" />
+            <element signature="e#1680#1681#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/scanner/Literals.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jminusminus/Scanner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="380" column="40" selection-start-line="380" selection-start-column="40" selection-end-line="380" selection-end-column="40" />
+          <folding>
+            <element signature="e#16863#16864#0" expanded="true" />
+            <element signature="e#17941#17942#0" expanded="true" />
+            <element signature="e#18129#18130#0" expanded="true" />
+            <element signature="e#18293#18294#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>j--</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>

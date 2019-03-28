@@ -98,7 +98,7 @@ LSHIFTASSIGN    ::= "<<="
 BXORASSIGN      ::= "^="
 BORASSIGN       ::= "|="
 OR              ::= "||"
-BANDASSIGN      ::= "&=" //
+BANDASSIGN      ::= "&="
 
 
 
@@ -122,6 +122,14 @@ INT_LITERAL    ::= "0" | ("1"-"9") {"0"-"9"}
 ESC            ::= "\\" ("n"|"r"|"t"|"b"|"f"|"'"|"\""|"\\")
 STRING_LITERAL ::= "\"" {ESC | ~("\""|"\\"|"\n"|"\r")} "\""
 CHAR_LITERAL   ::= "'" (ESC | ~("'"|"\n"|"\r"|"\\")) "'"
+DIGIT          ::= ("0"-"9")
+NON-ZERO DIGIT ::= ("1"-"9")
+FRAG           ::= DOT DIGIT {DIGIT}
+EXP            ::= ("e"|"E") ["+"|"-"] INT_LITERAL
+DOUBLE_LITERAL ::= INT_LITERAL FRAG [EXP] ("d"|"D)
+                 | INT_LITERAL [EXP] ("d"|"D")
+                 | FRAG [EXP] ("d"|"D")
+
 
 // End of file
 EOF            ::= "<end of file>"
