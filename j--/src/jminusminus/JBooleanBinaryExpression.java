@@ -234,7 +234,7 @@ class JLogicalOrOp extends JBooleanBinaryExpression {
 
     /**
      * The semantics of j-- require that we implement short-circuiting branching
-     * in implementing the logical AND.
+     * in implementing the logical OR.
      *
      * @param output
      *            the code emitter (basically an abstraction for producing the
