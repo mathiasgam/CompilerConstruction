@@ -15,7 +15,9 @@ classDeclaration ::= CLASS IDENTIFIER
                        [EXTENDS qualifiedIdentifier] 
                        classBody
 
-classBody ::= LCURLY {modifiers memberDecl} RCURLY
+classBody ::= LCURLY
+                {modifiers memberDecl}
+              RCURLY
 
 memberDecl ::= IDENTIFIER            // constructor
                  formalParameters block
@@ -23,6 +25,7 @@ memberDecl ::= IDENTIFIER            // constructor
                  formalParameters
                  (block | SEMI)
              | type variableDeclarators SEMI // field
+             | block // static blocks
 
 block ::= LCURLY {blockStatement} RCURLY 
 
