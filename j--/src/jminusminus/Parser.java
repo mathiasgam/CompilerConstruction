@@ -1038,7 +1038,7 @@ public class Parser {
 
     private JExpression assignmentExpression() {
         int line = scanner.token().line();
-        JExpression lhs = conditionalOrExpression();
+        JExpression lhs = ternaryConditionalExpression();
         if (have(ASSIGN)) {
             return new JAssignOp(line, lhs, assignmentExpression());
         } else if (have(PLUS_ASSIGN)) {
@@ -1053,6 +1053,19 @@ public class Parser {
             return new JRemAssignOp(line, lhs, assignmentExpression());
         } else {
             return lhs;
+        }
+    }
+
+
+    private JExpression ternaryConditionalExpression(){
+        int line = scanner.token().line();
+        JExpression conditional = conditionalOrExpression();
+        if (have(TCON)){
+            JExpression lhs = conditionalOrExpression();
+            mustBe(COL);
+            return new JTernaryConditionalExpression(line, conditional, lhs, conditionalOrExpression());
+        }else{
+            return conditional;
         }
     }
 

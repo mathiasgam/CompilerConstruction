@@ -85,7 +85,7 @@ expression ::= assignmentExpression
 assignmentExpression ::= ternaryConditionalExpression  // must be a valid lhs
                            [(ASSIGN | PLUS_ASSIGN | SUBEQUAL | DIVASSIGN | MULASSIGN | REMASSIGN) assignmentExpression]
 
-ternaryConditionalExpression ::= conditionalOrExpression TCON conditionalOrExpression COL conditionalOrExpression
+ternaryConditionalExpression ::= conditionalOrExpression [TCON conditionalOrExpression COL conditionalOrExpression]
 
 conditionalOrExpression ::= conditionalAndExpression // level 11
                                {OR conditionalAndExpression}

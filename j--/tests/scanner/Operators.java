@@ -19,5 +19,7 @@ public class Operators {
         x++;
         bob++;
         //int z = y ? 2 : 0;
+
+        bob = x > y ? 4 : 41;
     } 
 }
