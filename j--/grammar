@@ -108,9 +108,9 @@ simpleUnaryExpression ::= LNOT unaryExpression
                         | LPAREN // casted               
                             referenceType
                           RPAREN simpleUnaryExpression
-                        | postfixExpression
+                        | prefixExpression
 
-prefixExpression ::= {DEC} primary {selector}
+prefixExpression ::= {DEC} postfixExpression
 
 postfixExpression ::= primary {selector} {DEC | INC}
 
