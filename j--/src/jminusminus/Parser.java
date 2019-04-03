@@ -401,7 +401,11 @@ public class Parser {
 
     private JAST typeDeclaration() {
         ArrayList<String> mods = modifiers();
-        return classDeclaration(mods);
+        if(have(CLASS))
+            return classDeclaration(mods);
+        else
+            return interfaceDeclaration(mods);
+
     }
 
     /**
@@ -473,6 +477,29 @@ public class Parser {
     }
 
     /**
+     * Parse an interface declaration.
+     *
+     * @param mods
+     *            the class modifiers.
+     * @return an AST for a classDeclaration.
+     */
+
+    private JInterfaceDeclaration interfaceDeclaration(ArrayList<String> mods) {
+        int line = scanner.token().line();
+        mustBe(INTERFACE);
+        mustBe(IDENTIFIER);
+        String name = scanner.previousToken().image();
+        ArrayList<String> parents = new ArrayList<String>();
+        if(have(EXTENDS)) {
+            do {
+                mustBe(IDENTIFIER);
+                parents.add(scanner.previousToken().image());
+            } while(have(COMMA));
+        }
+        return new JInterfaceDeclaration(line, mods, name, parents, classBody());
+    }
+
+    /**
      * Parse a class declaration.
      * 
      * <pre>
@@ -491,16 +518,22 @@ public class Parser {
 
     private JClassDeclaration classDeclaration(ArrayList<String> mods) {
         int line = scanner.token().line();
-        mustBe(CLASS);
         mustBe(IDENTIFIER);
         String name = scanner.previousToken().image();
         Type superClass;
+        ArrayList<String> interfaces = new ArrayList<String>();
         if (have(EXTENDS)) {
             superClass = qualifiedIdentifier();
         } else {
             superClass = Type.OBJECT;
         }
-        return new JClassDeclaration(line, mods, name, superClass, classBody());
+        if(have(IMPLEMENTS)) {
+            do {
+                mustBe(IDENTIFIER);
+                interfaces.add(scanner.previousToken().image());
+            } while(have(COMMA));
+        }
+        return new JClassDeclaration(line, mods, name, superClass, interfaces, classBody());
     }
 
     /**

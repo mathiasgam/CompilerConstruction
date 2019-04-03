@@ -4,7 +4,23 @@ package pass;
 
 import java.lang.System;
 
-abstract class Animal {
+public interface test1 {
+
+}
+
+public interface test2 {
+
+}
+
+public interface organism extends test1, test2 {
+    int x = 3;
+}
+
+public interface haveSoul {
+    int y = 3;
+}
+
+abstract class Animal implements organism, haveSoul {
 
     protected String scientificName;
 
