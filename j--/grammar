@@ -21,7 +21,9 @@ classDeclaration ::= CLASS IDENTIFIER
                        {IMPLEMENTS IDENTIFIER {COMMA IDENTIFIER}}
                        classBody
 
-classBody ::= LCURLY {modifiers memberDecl} RCURLY
+classBody ::= LCURLY
+                {modifiers memberDecl}
+              RCURLY
 
 memberDecl ::= IDENTIFIER            // constructor
                  formalParameters block
@@ -29,6 +31,7 @@ memberDecl ::= IDENTIFIER            // constructor
                  formalParameters
                  (block | SEMI)
              | type variableDeclarators SEMI // field
+             | block // static blocks
 
 block ::= LCURLY {blockStatement} RCURLY 
 
@@ -75,8 +78,10 @@ statementExpression ::= expression // but must have side-effect, eg i++
 
 expression ::= assignmentExpression
 
-assignmentExpression ::= conditionalOrExpression  // must be a valid lhs
+assignmentExpression ::= ternaryConditionalExpression  // must be a valid lhs
                            [(ASSIGN | PLUS_ASSIGN | SUBEQUAL | DIVASSIGN | MULASSIGN | REMASSIGN) assignmentExpression]
+
+ternaryConditionalExpression ::= conditionalOrExpression TCON conditionalOrExpression COL conditionalOrExpression
 
 conditionalOrExpression ::= conditionalAndExpression // level 11
                                {OR conditionalAndExpression}
@@ -114,9 +119,9 @@ simpleUnaryExpression ::= LNOT unaryExpression
                         | LPAREN // casted               
                             referenceType
                           RPAREN simpleUnaryExpression
-                        | postfixExpression
+                        | prefixExpression
 
-prefixExpression ::= {DEC} primary {selector}
+prefixExpression ::= {DEC} postfixExpression
 
 postfixExpression ::= primary {selector} {DEC | INC}
 
