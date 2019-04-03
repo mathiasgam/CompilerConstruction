@@ -7,7 +7,7 @@ public class Operators {
         x /= 3;
         x %= 10;
         int y = 1;
-        boolean z = y == 1 || false
+        boolean z = y == 1 || false;
         //int z = y ? 2 : 0;
     } 
 }
