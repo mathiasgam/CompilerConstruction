@@ -85,7 +85,14 @@ class JBlockDeclaration
         p.println("</JBlockDeclaration>");
     }
 
-    public JAST analyze(Context context) {}
+    // TODO implement
+    public void preAnalyze(Context context, CLEmitter partial) {}
+
+    public JAST analyze(Context context) {
+        return null;
+    }
+
+    public void partialCodegen(Context context, CLEmitter partial) {}
 
     public void codegen(CLEmitter output){}
 }

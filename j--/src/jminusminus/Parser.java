@@ -554,7 +554,7 @@ public class Parser {
             JBlock body = block();
             memberDecl = new JConstructorDeclaration(line, mods, name, params,
                     body);
-        } else if (have(LCURLY)){
+        } else if (see(LCURLY)){
             JBlock body = block();
             memberDecl = new JBlockDeclaration(line, mods, body);
         } else {
