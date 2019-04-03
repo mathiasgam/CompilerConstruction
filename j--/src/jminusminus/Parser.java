@@ -955,7 +955,9 @@ public class Parser {
         int line = scanner.token().line();
         JExpression expr = expression();
         if (expr instanceof JAssignment || expr instanceof JPreIncrementOp
+                || expr instanceof JPreDecrementOp
                 || expr instanceof JPostDecrementOp
+                || expr instanceof JPostIncrementOp
                 || expr instanceof JMessageExpression
                 || expr instanceof JSuperConstruction
                 || expr instanceof JThisConstruction || expr instanceof JNewOp
@@ -1193,8 +1195,10 @@ public class Parser {
             return new JPreIncrementOp(line, unaryExpression());
         } else if (have(MINUS)) {
             return new JNegateOp(line, unaryExpression());
+        } else if (have(DEC)) {
+            return new JPreDecrementOp(line, unaryExpression());
         } else {
-            return simpleUnaryExpression();
+                return simpleUnaryExpression();
         }
     }
 
@@ -1249,6 +1253,9 @@ public class Parser {
         }
         while (have(DEC)) {
             primaryExpr = new JPostDecrementOp(line, primaryExpr);
+        }
+        while (have(INC)) {
+            primaryExpr = new JPostIncrementOp(line, primaryExpr);
         }
         return primaryExpr;
     }

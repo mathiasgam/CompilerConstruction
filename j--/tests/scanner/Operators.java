@@ -8,6 +8,8 @@ public class Operators {
         x %= 10;
         int y = 1;
         boolean z = y == 1 || false;
+        --x;
+        x++;
         //int z = y ? 2 : 0;
     } 
 }
