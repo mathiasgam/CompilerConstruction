@@ -700,6 +700,30 @@ public class Parser {
             }
         } else if (have(SEMI)) {
             return new JEmptyStatement(line);
+        } else if (have(TRY)) {
+            JStatement tryStatement = block();
+            if (see(CATCH)){
+                ArrayList<JFormalParameter> catchParameters = new ArrayList<JFormalParameter>();
+                ArrayList<JStatement> catchStatements = new ArrayList<JStatement>();
+                while (have(CATCH)){
+                    mustBe(LPAREN);
+                    JFormalParameter parameter = formalParameter();
+                    mustBe(RPAREN);
+                    JStatement statement = block();
+                    catchParameters.add(parameter);
+                    catchStatements.add(statement);
+                }
+                if (have(FINALLY)){
+                    JStatement finallyStatement = block();
+                    return new JTryStatement(line, tryStatement, catchParameters, catchStatements, finallyStatement);
+                }else{
+                    return new JTryStatement(line, tryStatement, catchParameters, catchStatements, null);
+                }
+            }else{
+                mustBe(FINALLY);
+                JStatement finallyStatement = block();
+                return new JTryStatement(line, tryStatement, null, null, finallyStatement);
+            }
         } else { // Must be a statementExpression
             JStatement statement = statementExpression();
             mustBe(SEMI);
