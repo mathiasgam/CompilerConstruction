@@ -44,6 +44,7 @@ statement ::= block
             | RETURN [expression] SEMI
             | SEMI 
             | statementExpression SEMI
+            | TRY statement CATCH parExpression statement [FINALLY statement]
 
 formalParameters ::= LPAREN 
                        [formalParameter {COMMA formalParameter}]
