@@ -15,7 +15,6 @@ interfaceDeclaration ::= INTERFACE IDENTIFIER
                             [EXTENDS IDENTIFIER {COMMA IDENTIFIER}]
                             classBody
 
-
 classDeclaration ::= CLASS IDENTIFIER 
                        [EXTENDS qualifiedIdentifier]
                        {IMPLEMENTS IDENTIFIER {COMMA IDENTIFIER}}
@@ -55,11 +54,20 @@ blockStatement ::= localVariableDeclarationStatement
 
 statement ::= block
             | IF parExpression statement [ELSE statement]
+            | FOR LPAREN forExp RPAREN statement
             | WHILE parExpression statement 
             | RETURN [expression] SEMI
             | SEMI 
             | statementExpression SEMI
             | TRY block {CATCH LPAREN formalParameter RPAREN block} [FINALLY block] // if no catch final is mandatory
+
+forExp ::= [forInit] SEMI [expression] SEMI [forUpdate]
+         | (formalParameter COL IDENTIFIER)
+
+forInit ::= statementExpression {COMMA statementExpression}
+          | [final] type variableDeclarators
+
+forUpdate ::= statementExpression {COMMA statementExpression}
 
 formalParameters ::= LPAREN 
                        [formalParameter {COMMA formalParameter}]
