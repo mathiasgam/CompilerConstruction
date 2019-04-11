@@ -42,7 +42,7 @@ class JInterfaceDeclaration extends JAST implements JTypeDecl {
     private ArrayList<JFieldDeclaration> staticFieldInitializations;
 
     /** Parent interfaces extended by this class */
-    private ArrayList<String> parents;
+    private ArrayList<TypeName> parents;
 
     /**
      * Construct an AST node for a class declaration given the line number, list
@@ -62,7 +62,7 @@ class JInterfaceDeclaration extends JAST implements JTypeDecl {
      */
 
     public JInterfaceDeclaration(int line, ArrayList<String> mods, String name,
-                                 ArrayList<String> parents, ArrayList<JMember> classBlock) {
+                                 ArrayList<TypeName> parents, ArrayList<JMember> classBlock) {
         super(line);
         this.mods = mods;
         this.name = name;
@@ -263,8 +263,8 @@ class JInterfaceDeclaration extends JAST implements JTypeDecl {
 
     private String printParents() {
         String res = "";
-        for(String s : parents) {
-            res += s + ", ";
+        for(TypeName s : parents) {
+            res += s.toString() + ", ";
         }
         if(res.length() > 0)
             res = res.substring(0,res.length() - 2);

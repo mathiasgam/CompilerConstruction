@@ -489,11 +489,10 @@ public class Parser {
         mustBe(INTERFACE);
         mustBe(IDENTIFIER);
         String name = scanner.previousToken().image();
-        ArrayList<String> parents = new ArrayList<String>();
+        ArrayList<TypeName> parents = new ArrayList<TypeName>();
         if(have(EXTENDS)) {
             do {
-                mustBe(IDENTIFIER);
-                parents.add(scanner.previousToken().image());
+                parents.add(qualifiedIdentifier());
             } while(have(COMMA));
         }
         return new JInterfaceDeclaration(line, mods, name, parents, classBody());
@@ -686,6 +685,8 @@ public class Parser {
             JStatement consequent = statement();
             JStatement alternate = have(ELSE) ? statement() : null;
             return new JIfStatement(line, test, consequent, alternate);
+        } else if (have(FOR)) {
+            return forStatement(line);
         } else if (have(WHILE)) {
             JExpression test = parExpression();
             JStatement statement = statement();
@@ -705,6 +706,59 @@ public class Parser {
             mustBe(SEMI);
             return statement;
         }
+    }
+
+    private JStatement forStatement (int line) {
+        mustBe(LPAREN);
+        scanner.recordPosition();
+        if (seeBasicType()) {
+            scanner.next();
+            if (have(IDENTIFIER) && see(COL)) {
+                scanner.returnToPosition();
+                return enhancedForStatement(line);
+            }
+        }
+        scanner.returnToPosition();
+        return basicForStatement(line);
+    }
+
+    private JEnhancedForStatement enhancedForStatement (int line) {
+        JFormalParameter item;
+        String collection;
+        item = formalParameter();
+        mustBe(COL);
+        mustBe(IDENTIFIER);
+        collection = scanner.previousToken().image();
+        mustBe(RPAREN);
+        JStatement body = statement();
+        return new JEnhancedForStatement(line, item, collection, body);
+    }
+
+    private JForStatement basicForStatement (int line) {
+        JStatement init, inc;
+        JExpression term;
+        if(seeLocalVariableDeclaration()) {
+            init = localVariableDeclarationStatement();
+        } else if (have(SEMI)) {
+            init = null;
+        } else {
+            init = statementExpression();
+            mustBe(SEMI);
+        }
+        if (have (SEMI)) {
+            term = null;
+        } else {
+            term = expression();
+            mustBe(SEMI);
+        }
+        if (have (RPAREN)) {
+            inc = null;
+        } else {
+            inc = statementExpression();
+            mustBe(RPAREN);
+        }
+        JStatement statement = statement();
+        return new JForStatement(line, init, term, inc, statement);
     }
 
     /**

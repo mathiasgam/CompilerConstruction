@@ -15,7 +15,6 @@ interfaceDeclaration ::= INTERFACE IDENTIFIER
                             [EXTENDS IDENTIFIER {COMMA IDENTIFIER}]
                             classBody
 
-
 classDeclaration ::= CLASS IDENTIFIER 
                        [EXTENDS qualifiedIdentifier]
                        {IMPLEMENTS IDENTIFIER {COMMA IDENTIFIER}}
@@ -46,8 +45,13 @@ statement ::= block
             | SEMI 
             | statementExpression SEMI
 
-forExp ::= ([expression] SEMI [expression] SEMI [expression])
-                | (type IDENTIFIER COL IDENTIFIER)
+forExp ::= [forInit] SEMI [expression] SEMI [forUpdate]
+         | (formalParameter COL IDENTIFIER)
+
+forInit ::= statementExpression {COMMA statementExpression}
+          | [final] type variableDeclarators
+
+forUpdate ::= statementExpression {COMMA statementExpression}
 
 formalParameters ::= LPAREN 
                        [formalParameter {COMMA formalParameter}]
