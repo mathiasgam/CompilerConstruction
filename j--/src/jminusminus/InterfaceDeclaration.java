@@ -291,11 +291,11 @@ class JInterfaceDeclaration extends JAST implements JTypeDecl {
             p.println("</Modifiers>");
         }
         if (classBlock != null) {
-            p.println("<ClassBlock>");
+            p.println("<InterfaceBlock>");
             for (JMember member : classBlock) {
                 ((JAST) member).writeToStdOut(p);
             }
-            p.println("</ClassBlock>");
+            p.println("</InterfaceBlock>");
         }
         p.indentLeft();
         p.println("</JInterfaceDeclaration>");

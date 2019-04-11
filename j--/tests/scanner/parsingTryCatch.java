@@ -1,13 +1,16 @@
 public class ReservedWords extends SomeClass implements  SomeInterface {
 
-    public static int f(int x) throws Exception {
-
+    public static int f(int x) throws Exception, Exception2 {
+        //throw new Exception("Some exception");
+        return x*x;
     }
+
     public static void main(String[] args) {
 
         try {
+            printf(f(4));
         }
-        catch (SomeException e) {
+        catch (Exception e) {
             /* do nothing */
         }
         catch (Exception2 e){
@@ -15,6 +18,6 @@ public class ReservedWords extends SomeClass implements  SomeInterface {
         }finally {
 
         }
-        throw new Exception("Some exception");
+
     }
 }

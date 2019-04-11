@@ -17,7 +17,8 @@ public interface organism extends test1, test2 {
 }
 
 public interface haveSoul {
-    int y = 3;
+    int soul = null;
+    public void printSoul() throws NoSoulExeption;
 }
 
 abstract class Animal implements organism, haveSoul {

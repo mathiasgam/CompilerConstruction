@@ -496,7 +496,7 @@ public class Parser {
                 parents.add(scanner.previousToken().image());
             } while(have(COMMA));
         }
-        return new JInterfaceDeclaration(line, mods, name, parents, classBody());
+        return new JInterfaceDeclaration(line, mods, name, parents, interfaceBody());
     }
 
     /**
@@ -558,6 +558,16 @@ public class Parser {
         return members;
     }
 
+    private ArrayList<JMember> interfaceBody() {
+        ArrayList<JMember> members = new ArrayList<JMember>();
+        mustBe(LCURLY);
+        while (!see(RCURLY) && !see(EOF)) {
+            members.add(interfaceMemberDeclaration(modifiers()));
+        }
+        mustBe(RCURLY);
+        return members;
+    }
+
     /**
      * Parse a member declaration.
      * 
@@ -584,9 +594,16 @@ public class Parser {
             mustBe(IDENTIFIER);
             String name = scanner.previousToken().image();
             ArrayList<JFormalParameter> params = formalParameters();
+            ArrayList<Type> _throws = null;
+            if (have(THROWS)){
+                _throws = new ArrayList<Type>();
+                do {
+                    _throws.add(qualifiedIdentifier());
+                } while (have(COMMA));
+            }
             JBlock body = block();
             memberDecl = new JConstructorDeclaration(line, mods, name, params,
-                    body);
+                    body, _throws);
         } else if (see(LCURLY)){
             JBlock body = block();
             memberDecl = new JBlockDeclaration(line, mods, body);
@@ -598,9 +615,16 @@ public class Parser {
                 mustBe(IDENTIFIER);
                 String name = scanner.previousToken().image();
                 ArrayList<JFormalParameter> params = formalParameters();
+                ArrayList<Type> _throws = null;
+                if (have(THROWS)){
+                    _throws = new ArrayList<Type>();
+                    do {
+                        _throws.add(qualifiedIdentifier());
+                    } while (have(COMMA));
+                }
                 JBlock body = have(SEMI) ? null : block();
                 memberDecl = new JMethodDeclaration(line, mods, name, type,
-                        params, body);
+                        params, body, _throws);
             } else {
                 type = type();
                 if (seeIdentLParen()) {
@@ -608,9 +632,16 @@ public class Parser {
                     mustBe(IDENTIFIER);
                     String name = scanner.previousToken().image();
                     ArrayList<JFormalParameter> params = formalParameters();
+                    ArrayList<Type> _throws = null;
+                    if (have(THROWS)){
+                        _throws = new ArrayList<Type>();
+                        do {
+                            _throws.add(qualifiedIdentifier());
+                        } while (have(COMMA));
+                    }
                     JBlock body = have(SEMI) ? null : block();
                     memberDecl = new JMethodDeclaration(line, mods, name, type,
-                            params, body);
+                            params, body, _throws);
                 } else {
                     // Field
                     memberDecl = new JFieldDeclaration(line, mods,
@@ -620,6 +651,54 @@ public class Parser {
             }
         }
         return memberDecl;
+    }
+
+    private JMember interfaceMemberDeclaration(ArrayList<String> mods) {
+        int line = scanner.token().line();
+        JMember interfaceMemberDecl = null;
+
+        Type type = null;
+        if (have(VOID)) {
+            // void method
+            type = Type.VOID;
+            mustBe(IDENTIFIER);
+            String name = scanner.previousToken().image();
+            ArrayList<JFormalParameter> params = formalParameters();
+            ArrayList<Type> _throws = null;
+            if (have(THROWS)){
+                _throws = new ArrayList<Type>();
+                do {
+                    _throws.add(qualifiedIdentifier());
+                } while (have(COMMA));
+            }
+            mustBe(SEMI);
+            interfaceMemberDecl = new JInterfaceMethodDeclaration(line, mods, name, type,
+                    params, _throws);
+        } else {
+            type = type();
+            if (seeIdentLParen()) {
+                // Non void method
+                mustBe(IDENTIFIER);
+                String name = scanner.previousToken().image();
+                ArrayList<JFormalParameter> params = formalParameters();
+                ArrayList<Type> _throws = null;
+                if (have(THROWS)){
+                    _throws = new ArrayList<Type>();
+                    do {
+                        _throws.add(qualifiedIdentifier());
+                    } while (have(COMMA));
+                }
+                mustBe(SEMI);
+                interfaceMemberDecl = new JInterfaceMethodDeclaration(line, mods, name, type,
+                        params, _throws);
+            } else {
+                // Field
+                interfaceMemberDecl = new JFieldDeclaration(line, mods,
+                        variableDeclarators(type));
+                mustBe(SEMI);
+            }
+        }
+        return interfaceMemberDecl;
     }
 
     /**
