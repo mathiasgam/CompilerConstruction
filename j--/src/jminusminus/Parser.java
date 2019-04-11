@@ -778,6 +778,8 @@ public class Parser {
                 mustBe(SEMI);
                 return new JReturnStatement(line, expr);
             }
+        } else if (have(THROW)){
+            return new JThrowStatement(line, expression());
         } else if (have(SEMI)) {
             return new JEmptyStatement(line);
         } else if (have(TRY)) {

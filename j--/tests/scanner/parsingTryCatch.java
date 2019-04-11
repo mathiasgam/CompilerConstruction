@@ -1,7 +1,7 @@
 public class ReservedWords extends SomeClass implements  SomeInterface {
 
     public static int f(int x) throws Exception, Exception2 {
-        //throw new Exception("Some exception");
+        throw new Exception("Some exception");
         return x*x;
     }
 
@@ -15,7 +15,7 @@ public class ReservedWords extends SomeClass implements  SomeInterface {
         }
         catch (Exception2 e){
 
-        }finally {
+        } finally {
 
         }
 

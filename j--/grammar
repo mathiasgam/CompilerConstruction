@@ -57,6 +57,7 @@ statement ::= block
             | FOR LPAREN forExp RPAREN statement
             | WHILE parExpression statement 
             | RETURN [expression] SEMI
+            | THROW expression SEMI
             | SEMI 
             | statementExpression SEMI
             | TRY block {CATCH LPAREN formalParameter RPAREN block} [FINALLY block] // if no catch final is mandatory
