@@ -1,4 +1,8 @@
 public class ReservedWords extends SomeClass implements  SomeInterface {
+
+    public static int f(int x) throws Exception {
+
+    }
     public static void main(String[] args) {
 
         try {
@@ -11,5 +15,6 @@ public class ReservedWords extends SomeClass implements  SomeInterface {
         }finally {
 
         }
+        throw new Exception("Some exception");
     }
 }
