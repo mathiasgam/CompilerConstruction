@@ -1296,6 +1296,8 @@ public class Parser {
         while (more) {
             if (have(EQUAL)) {
                 lhs = new JEqualOp(line, lhs, relationalExpression());
+            } else if (have(NOTEQUAL)){
+                lhs = new JNotEqualOp(line, lhs, relationalExpression());
             } else {
                 more = false;
             }
@@ -1320,6 +1322,10 @@ public class Parser {
         JExpression lhs = additiveExpression();
         if (have(GT)) {
             return new JGreaterThanOp(line, lhs, additiveExpression());
+        } else if (have(LT)) {
+            return new JLessThanOp(line, lhs, additiveExpression());
+        } else if (have(GE)) {
+            return new JGreaterEqualOp(line, lhs, additiveExpression());
         } else if (have(LE)) {
             return new JLessEqualOp(line, lhs, additiveExpression());
         } else if (have(INSTANCEOF)) {

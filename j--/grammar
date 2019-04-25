@@ -121,7 +121,7 @@ bitwiseXORExpression ::= bitwiseANDExpression {BXOR bitwiseANDExpression} // lev
 bitwiseANDExpression ::= equalityExpression {BAND equalityExpression} // level 7
 
 equalityExpression ::= relationalExpression  // level 6
-                         {EQUAL relationalExpression}
+                         {(EQUAL | NOTEQUAL) relationalExpression}
 
 relationalExpression ::= shiftExpressions       // level 5
                            [(GT | LE) shiftExpressions

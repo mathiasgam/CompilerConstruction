@@ -41,9 +41,13 @@ abstract class JComparison extends JBooleanBinaryExpression {
     public JExpression analyze(Context context) {
         lhs = (JExpression) lhs.analyze(context);
         rhs = (JExpression) rhs.analyze(context);
-        lhs.type().mustMatchExpected(line(), Type.INT);
-        rhs.type().mustMatchExpected(line(), lhs.type());
-        type = Type.BOOLEAN;
+        if (lhs.type().equals(Type.INT) || lhs.type().equals(Type.DOUBLE)) {
+            rhs.type().mustMatchExpected(line(), lhs.type());
+            type = Type.BOOLEAN;
+        }else{
+            JAST.compilationUnit.reportSemanticError(line(),
+                    "Invalid lhs type for comparison: " + lhs.type());
+        }
         return this;
     }
 
@@ -95,6 +99,43 @@ class JGreaterThanOp extends JComparison {
 
 }
 
+class JLessThanOp extends JComparison {
+
+    /**
+     * Construct an AST node for a greater-than expression given its line
+     * number, and the lhs and rhs operands.
+     *
+     * @param line
+     *            line in which the greater-than expression occurs in the source
+     *            file.
+     * @param lhs
+     *            lhs operand.
+     * @param rhs
+     *            rhs operand.
+     */
+
+    public JLessThanOp(int line, JExpression lhs, JExpression rhs) {
+        super(line, "<", lhs, rhs);
+    }
+
+    /**
+     * Branching code generation for > operation.
+     *
+     * @param output
+     *            the code emitter (basically an abstraction for producing the
+     *            .class file).
+     * @param targetLabel
+     *            target for generated branch instruction.
+     * @param onTrue
+     *            should we branch on true?
+     */
+
+    public void codegen(CLEmitter output, String targetLabel, boolean onTrue) {
+
+    }
+
+}
+
 /**
  * The AST node for a less-than-or-equal-to (<=) expression. Implements
  * short-circuiting branching.
@@ -137,6 +178,18 @@ class JLessEqualOp extends JComparison {
         output
                 .addBranchInstruction(onTrue ? IF_ICMPLE : IF_ICMPGT,
                         targetLabel);
+    }
+
+}
+
+class JGreaterEqualOp extends JComparison {
+
+    public JGreaterEqualOp(int line, JExpression lhs, JExpression rhs) {
+        super(line, ">=", lhs, rhs);
+    }
+
+    public void codegen(CLEmitter output, String targetLabel, boolean onTrue) {
+
     }
 
 }
