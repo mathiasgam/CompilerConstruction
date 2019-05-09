@@ -64,6 +64,23 @@ class JMethodDeclaration
      *                method body.
      */
 
+    // original constructor for javaCC paser
+    public JMethodDeclaration(int line, ArrayList<String> mods,
+                              String name, Type returnType,
+                              ArrayList<JFormalParameter> params, JBlock body)
+    {
+        super(line);
+        this.mods = mods;
+        this.name = name;
+        this.returnType = returnType;
+        this.params = params;
+        this.body = body;
+        this.method_throws = null;
+        this.isAbstract = mods.contains("abstract");
+        this.isStatic = mods.contains("static");
+        this.isPrivate = mods.contains("private");
+    }
+
     public JMethodDeclaration(int line, ArrayList<String> mods,
         String name, Type returnType,
         ArrayList<JFormalParameter> params, JBlock body, ArrayList<Type> method_throws)
