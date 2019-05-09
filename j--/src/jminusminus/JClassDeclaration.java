@@ -21,7 +21,9 @@ class JClassDeclaration extends JAST implements JTypeDecl {
     private String name;
 
     /** Class block. */
-    private ArrayList<JMember> classBlock;
+    private ArrayList<JMember> classMembers;
+    private ArrayList<JBlock> classBlocks;
+    private ArrayList<JBlock> classStaticBlocks;
 
     /** Super class type. */
     private Type superType;
@@ -60,15 +62,31 @@ class JClassDeclaration extends JAST implements JTypeDecl {
      * @param classBlock
      *            class block.
      */
+    public JClassDeclaration(int line, ArrayList<String> mods, String name,
+                             Type superType, ArrayList<JMember> classMembers) {
+        super(line);
+        this.mods = mods;
+        this.name = name;
+        this.superType = superType;
+        this.interfaces = null;
+        this.classMembers = classMembers;
+        this.classBlocks = new ArrayList<JBlock>();
+        this.classStaticBlocks = new ArrayList<JBlock>();
+        hasExplicitConstructor = false;
+        instanceFieldInitializations = new ArrayList<JFieldDeclaration>();
+        staticFieldInitializations = new ArrayList<JFieldDeclaration>();
+    }
 
     public JClassDeclaration(int line, ArrayList<String> mods, String name,
-            Type superType, ArrayList<String> interfaces, ArrayList<JMember> classBlock) {
+            Type superType, ArrayList<String> interfaces, ArrayList<JMember> classMembers, ArrayList<JBlock> classBlocks, ArrayList<JBlock> classStaticBlocks) {
         super(line);
         this.mods = mods;
         this.name = name;
         this.superType = superType;
         this.interfaces = interfaces;
-        this.classBlock = classBlock;
+        this.classMembers = classMembers;
+        this.classBlocks = classBlocks;
+        this.classStaticBlocks = classStaticBlocks;
         hasExplicitConstructor = false;
         instanceFieldInitializations = new ArrayList<JFieldDeclaration>();
         staticFieldInitializations = new ArrayList<JFieldDeclaration>();
@@ -167,7 +185,7 @@ class JClassDeclaration extends JAST implements JTypeDecl {
 
         // Pre-analyze the members and add them to the partial
         // class
-        for (JMember member : classBlock) {
+        for (JMember member : classMembers) {
             member.preAnalyze(this.context, partial);
             if (member instanceof JConstructorDeclaration
                     && ((JConstructorDeclaration) member).params.size() == 0) {
@@ -201,12 +219,12 @@ class JClassDeclaration extends JAST implements JTypeDecl {
 
     public JAST analyze(Context context) {
         // Analyze all members
-        for (JMember member : classBlock) {
+        for (JMember member : classMembers) {
             ((JAST) member).analyze(this.context);
         }
 
         // Copy declared fields for purposes of initialization.
-        for (JMember member : classBlock) {
+        for (JMember member : classMembers) {
             if (member instanceof JFieldDeclaration) {
                 JFieldDeclaration fieldDecl = (JFieldDeclaration) member;
                 if (fieldDecl.mods().contains("static")) {
@@ -252,7 +270,7 @@ class JClassDeclaration extends JAST implements JTypeDecl {
         }
 
         // The members
-        for (JMember member : classBlock) {
+        for (JMember member : classMembers) {
             ((JAST) member).codegen(output);
         }
 
@@ -291,9 +309,15 @@ class JClassDeclaration extends JAST implements JTypeDecl {
             p.indentLeft();
             p.println("</Modifiers>");
         }
-        if (classBlock != null) {
+        if (classMembers != null) {
             p.println("<ClassBlock>");
-            for (JMember member : classBlock) {
+            for (JBlock block : classBlocks){
+                block.writeToStdOut(p);
+            }
+            for (JBlock block : classStaticBlocks){
+                block.writeToStdOut(p);
+            }
+            for (JMember member : classMembers) {
                 ((JAST) member).writeToStdOut(p);
             }
             p.println("</ClassBlock>");
@@ -347,6 +371,8 @@ class JClassDeclaration extends JAST implements JTypeDecl {
         for (JFieldDeclaration instanceField : instanceFieldInitializations) {
             instanceField.codegenInitializations(output);
         }
+
+        // return initializer
 
         // Return
         output.addNoArgInstruction(RETURN);

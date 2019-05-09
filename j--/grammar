@@ -21,7 +21,7 @@ classDeclaration ::= CLASS IDENTIFIER
                        classBody
 
 classBody ::= LCURLY
-                {modifiers memberDecl}
+                {modifiers memberDecl | STATIC block | block}
               RCURLY
 
 

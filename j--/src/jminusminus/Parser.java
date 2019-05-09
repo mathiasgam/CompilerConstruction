@@ -532,7 +532,27 @@ public class Parser {
                 interfaces.add(scanner.previousToken().image());
             } while(have(COMMA));
         }
-        return new JClassDeclaration(line, mods, name, superClass, interfaces, classBody());
+        ArrayList<JMember> members = new ArrayList<JMember>();
+        ArrayList<JBlock> blocks = new ArrayList<JBlock>();
+        ArrayList<JBlock> staticBlocks = new ArrayList<JBlock>();
+        mustBe(LCURLY);
+        while (!see(RCURLY) && !see(EOF)) {
+            if (have(STATIC)){
+                if (see(LCURLY)){
+                    staticBlocks.add(block());
+                }else {
+                    ArrayList<String> member_mods = modifiers();
+                    member_mods.add(STATIC.image());
+                    members.add(memberDecl(member_mods));
+                }
+            }else if (see(LCURLY)){
+                blocks.add(block());
+            }else{
+                members.add(memberDecl(modifiers()));
+            }
+        }
+        mustBe(RCURLY);
+        return new JClassDeclaration(line, mods, name, superClass, interfaces, members, blocks, staticBlocks);
     }
 
     /**
@@ -547,16 +567,29 @@ public class Parser {
      * @return list of members in the class body.
      */
 
+    /*
     private ArrayList<JMember> classBody() {
         ArrayList<JMember> members = new ArrayList<JMember>();
+        ArrayList<JBlock> blocks = new ArrayList<JBlock>();
+        ArrayList<JBlock> staticBlocks = new ArrayList<JBlock>();
         mustBe(LCURLY);
         while (!see(RCURLY) && !see(EOF)) {
+            if (see(have(STATIC)){
+                if (see(LCURLY)){
+                    staticBlocks.add(block());
+                }else {
+                    members.add(memberDecl(modifiers().add(STATIC.image())));
+                }
+            }else if (see(LCURLY)){
+                blocks.add(block());
+            }
             members.add(memberDecl(modifiers()));
         }
         mustBe(RCURLY);
         return members;
     }
 
+     */
     private ArrayList<JMember> interfaceBody() {
         ArrayList<JMember> members = new ArrayList<JMember>();
         mustBe(LCURLY);
@@ -600,12 +633,8 @@ public class Parser {
                     _throws.add(qualifiedIdentifier());
                 } while (have(COMMA));
             }
-            JBlock body = block();
             memberDecl = new JConstructorDeclaration(line, mods, name, params,
-                    body, _throws);
-        } else if (see(LCURLY)){
-            JBlock body = block();
-            memberDecl = new JBlockDeclaration(line, mods, body);
+                    block(), _throws);
         } else {
             Type type = null;
             if (have(VOID)) {
