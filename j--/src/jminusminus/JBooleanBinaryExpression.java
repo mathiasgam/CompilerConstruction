@@ -113,8 +113,12 @@ class JEqualOp extends JBooleanBinaryExpression {
         if (lhs.type().isReference()) {
             output.addBranchInstruction(onTrue ? IF_ACMPEQ : IF_ACMPNE,
                     targetLabel);
-        } else {
+        } else if (lhs.type() == Type.INT){
             output.addBranchInstruction(onTrue ? IF_ICMPEQ : IF_ICMPNE,
+                    targetLabel);
+        } else if (lhs.type() == Type.DOUBLE) {
+            output.addNoArgInstruction(DCMPG)
+            output.addBranchInstruction(onTrue ? IFEQ : IFNE,
                     targetLabel);
         }
     }
@@ -122,17 +126,17 @@ class JEqualOp extends JBooleanBinaryExpression {
 }
 
 /**
- * The AST node for an equality (==) expression. Implements short-circuiting
+ * The AST node for an inequality (!=) expression. Implements short-circuiting
  * branching.
  */
 
 class JNotEqualOp extends JBooleanBinaryExpression {
 
     /**
-     * Construct an AST node for an equality expression.
+     * Construct an AST node for an inequality expression.
      *
      * @param line
-     *            line number in which the equality expression occurs in the
+     *            line number in which the inequality expression occurs in the
      *            source file.
      * @param lhs
      *            lhs operand.
@@ -145,7 +149,7 @@ class JNotEqualOp extends JBooleanBinaryExpression {
     }
 
     /**
-     * Analyzing an equality expression means analyzing its operands and
+     * Analyzing an inequality expression means analyzing its operands and
      * checking that the types match.
      *
      * @param context
@@ -162,7 +166,7 @@ class JNotEqualOp extends JBooleanBinaryExpression {
     }
 
     /**
-     * Branching code generation for == operation.
+     * Branching code generation for != operation.
      *
      * @param output
      *            the code emitter (basically an abstraction for producing the
@@ -174,6 +178,19 @@ class JNotEqualOp extends JBooleanBinaryExpression {
      */
 
     public void codegen(CLEmitter output, String targetLabel, boolean onTrue) {
+        lhs.codegen(output);
+        rhs.codegen(output);
+        if (lhs.type().isReference()) {
+            output.addBranchInstruction(onTrue ? IF_ACMPNE : IF_ACMPEQ,
+                    targetLabel);
+        } else if (lhs.type() == Type.INT){
+            output.addBranchInstruction(onTrue ? IF_ICMPNE : IF_ICMPEQ,
+                    targetLabel);
+        } else if (lhs.type() == Type.DOUBLE) {
+            output.addNoArgInstruction(DCMPG)
+            output.addBranchInstruction(onTrue ? IFNE : IFEQ,
+                    targetLabel);
+        }
     }
 
 }

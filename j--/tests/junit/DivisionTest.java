@@ -19,5 +19,6 @@ public class DivisionTest extends TestCase {
         this.assertEquals(division.divide(0,42), 0);
         this.assertEquals(division.divide(42,1), 42);
         this.assertEquals(division.divide(127,3), 42);
+        this.assertEquals(division.divide(1.2d,1.2d), 1d);
     }
 }
