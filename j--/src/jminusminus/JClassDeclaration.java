@@ -223,6 +223,14 @@ class JClassDeclaration extends JAST implements JTypeDecl {
             ((JAST) member).analyze(this.context);
         }
 
+        // Analyse all initializer blocks
+        for (JBlock block : classBlocks){
+            block.analyze(this.context);
+        }
+        for (JBlock block : classStaticBlocks){
+            block.analyze(this.context);
+        }
+
         // Copy declared fields for purposes of initialization.
         for (JMember member : classMembers) {
             if (member instanceof JFieldDeclaration) {
