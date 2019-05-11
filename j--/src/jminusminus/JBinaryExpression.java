@@ -284,7 +284,7 @@ class JDivideOp extends JBinaryExpression {
         } else {
             type = Type.ANY;
             JAST.compilationUnit.reportSemanticError(line(),
-                    "Invalid operand types for /");
+                    "Invalid operand types for /" + lhs.type());
         }
         return this;
     }

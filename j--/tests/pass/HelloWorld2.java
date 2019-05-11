@@ -1,3 +1,4 @@
+/*
 package pass;
 
 import java.lang.System;
@@ -9,3 +10,5 @@ class HelloWorld2 {
         System.out.println("Remainder of: 2 % 5 = " + (a << b));
     }
 }
+
+ */

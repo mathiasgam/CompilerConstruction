@@ -3,6 +3,7 @@
 package jminusminus;
 
 import java.util.ArrayList;
+import jminusminus.JBlock.*;
 import static jminusminus.CLConstants.*;
 
 /**
@@ -133,6 +134,10 @@ class JClassDeclaration extends JAST implements JTypeDecl {
         return instanceFieldInitializations;
     }
 
+    public ArrayList<JBlock> getClassBlocks() {
+        return classBlocks;
+    }
+
     /**
      * Declare this class in the parent (compilation unit) context.
      *
@@ -183,6 +188,7 @@ class JClassDeclaration extends JAST implements JTypeDecl {
                 : JAST.compilationUnit.packageName() + "/" + name;
         partial.addClass(mods, qualifiedName, superType.jvmName(), null, false);
 
+
         // Pre-analyze the members and add them to the partial
         // class
         for (JMember member : classMembers) {
@@ -218,17 +224,17 @@ class JClassDeclaration extends JAST implements JTypeDecl {
      */
 
     public JAST analyze(Context context) {
-        // Analyze all members
-        for (JMember member : classMembers) {
-            ((JAST) member).analyze(this.context);
-        }
-
         // Analyse all initializer blocks
+        for (JBlock block : classStaticBlocks){
+            block.analyze(this.context);
+        }
         for (JBlock block : classBlocks){
             block.analyze(this.context);
         }
-        for (JBlock block : classStaticBlocks){
-            block.analyze(this.context);
+
+        // Analyze all members
+        for (JMember member : classMembers) {
+            ((JAST) member).analyze(this.context);
         }
 
         // Copy declared fields for purposes of initialization.
@@ -283,7 +289,7 @@ class JClassDeclaration extends JAST implements JTypeDecl {
         }
 
         // Generate a class initialization method?
-        if (staticFieldInitializations.size() > 0) {
+        if (staticFieldInitializations.size() > 0 || classStaticBlocks.size() > 0) {
             codegenClassInit(output);
         }
     }
@@ -366,6 +372,11 @@ class JClassDeclaration extends JAST implements JTypeDecl {
         partial.addMemberAccessInstruction(INVOKESPECIAL, superType.jvmName(),
                 "<init>", "()V");
 
+        // return initializer
+        for (JBlock block : classBlocks){
+            block.codegen(partial);
+        }
+
         // Return
         partial.addNoArgInstruction(RETURN);
     }
@@ -395,6 +406,9 @@ class JClassDeclaration extends JAST implements JTypeDecl {
         }
 
         // return initializer
+        for (JBlock block : classBlocks){
+            block.codegen(output);
+        }
 
         // Return
         output.addNoArgInstruction(RETURN);
@@ -419,6 +433,11 @@ class JClassDeclaration extends JAST implements JTypeDecl {
         // for them
         for (JFieldDeclaration staticField : staticFieldInitializations) {
             staticField.codegenInitializations(output);
+        }
+
+        // Code gen for static blocks. Might have to be changed.
+        for (JBlock block : classStaticBlocks){
+            block.codegen(output);
         }
 
         // Return
