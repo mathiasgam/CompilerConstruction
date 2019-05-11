@@ -305,7 +305,7 @@ class JVariable extends JExpression implements JLhs {
      */
 
     public void writeToStdOut(PrettyPrinter p) {
-        p.println("<JVariable name=\"" + name + "\"/>");
+        p.printf("<JVariable name=\"%s\" type=\"%s\"/>\n", name, type);
     }
 
 }
