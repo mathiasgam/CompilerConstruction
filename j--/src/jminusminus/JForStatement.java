@@ -53,6 +53,20 @@ class JForStatement extends JStatement {
 
     public JForStatement analyze(Context context) {
 
+        LocalContext lcon = new LocalContext(context);
+        if (init != null){
+            init = (JStatement) init.analyze(lcon);
+        }
+        if (term != null){
+            term = (JExpression) term.analyze(lcon);
+            term.type().mustMatchExpected(line(), Type.BOOLEAN);
+        }
+        if (inc != null){
+            inc = (JStatement) inc.analyze(lcon);
+        }
+        if (body != null){
+            body = (JStatement) body.analyze(lcon);
+        }
         return this;
     }
 
@@ -65,6 +79,34 @@ class JForStatement extends JStatement {
      */
 
     public void codegen(CLEmitter output) {
+        String labelTest = output.createLabel();
+        String labelEnd = output.createLabel();
+
+        // if init is not empty, then generate code for initialization
+        if (init != null){
+            init.codegen(output);
+        }
+
+        // label for jumping back to start of loop
+        output.addLabel(labelTest);
+        // if a test is specified generate code, else just continue in loop
+        if (term != null){
+            term.codegen(output, labelEnd, false);
+        }
+
+        // if a body is specified, generate code for it
+        if (body != null){
+            body.codegen(output);
+        }
+
+        // if an increment is specified, generate the code after the body
+        if (inc != null){
+            inc.codegen(output);
+        }
+        // unconditional jump to the test, to see if the loop should continue.
+        output.addBranchInstruction(GOTO, labelTest);
+        // label for jumping to the end of the for loop
+        output.addLabel(labelEnd);
 
     }
 

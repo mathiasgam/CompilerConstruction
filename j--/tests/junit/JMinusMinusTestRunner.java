@@ -26,6 +26,7 @@ public class JMinusMinusTestRunner {
         //suite.addTestSuite(ShiftLeftTest.class);
         suite.addTestSuite(InitializerBlockTest.class);
         suite.addTestSuite(TenaryTest.class);
+        suite.addTestSuite(ForLoopTest.class);
         return suite;
     }
 
