@@ -2,7 +2,16 @@ package pass;
 import java.lang.System;
 
 public class Division {
-    public double divide(double x, double y) {
-        return x ;
+
+    public int divideInt(int x, int y) {
+        return x / y;
     }
+
+    /*
+    public double divideDouble(double x, double y) {
+        return x / y;
+    }
+
+     */
+
 }
