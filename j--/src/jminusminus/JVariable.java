@@ -147,27 +147,42 @@ class JVariable extends JExpression implements JLhs {
                     output.addOneArgInstruction(ALOAD, offset);
                     break;
                 }
-            } else {
-                // Primitive types
-                if (type == Type.INT || type == Type.BOOLEAN
+            } else if (type == Type.INT || type == Type.BOOLEAN
                         || type == Type.CHAR) {
-                    switch (offset) {
+                switch (offset) {
+                case 0:
+                    output.addNoArgInstruction(ILOAD_0);
+                    break;
+                case 1:
+                    output.addNoArgInstruction(ILOAD_1);
+                    break;
+                case 2:
+                    output.addNoArgInstruction(ILOAD_2);
+                    break;
+                case 3:
+                    output.addNoArgInstruction(ILOAD_3);
+                    break;
+                default:
+                    output.addOneArgInstruction(ILOAD, offset);
+                    break;
+                }
+            } else if (type == Type.DOUBLE) {
+                switch (offset) {
                     case 0:
-                        output.addNoArgInstruction(ILOAD_0);
+                        output.addNoArgInstruction(DLOAD_0);
                         break;
                     case 1:
-                        output.addNoArgInstruction(ILOAD_1);
+                        output.addNoArgInstruction(DLOAD_1);
                         break;
                     case 2:
-                        output.addNoArgInstruction(ILOAD_2);
+                        output.addNoArgInstruction(DLOAD_2);
                         break;
                     case 3:
-                        output.addNoArgInstruction(ILOAD_3);
+                        output.addNoArgInstruction(DLOAD_3);
                         break;
                     default:
-                        output.addOneArgInstruction(ILOAD, offset);
+                        output.addOneArgInstruction(DLOAD, offset);
                         break;
-                    }
                 }
             }
         }
