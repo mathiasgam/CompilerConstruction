@@ -48,7 +48,7 @@ enum TokenKind {
     GE(">="),
     LNOT("!"),
     MINUS("-"),
-    PLUS_ASSIGN("+="),
+    PLUSASSIGN("+="),
     STAR("*"),
     DIV("/"),
     REM("%"),
@@ -103,7 +103,7 @@ enum TokenKind {
     TCON("?"),
     NOTEQUAL("!="),
     DIVASSIGN("/="),
-    SUBEQUAL("-="),
+    SUBASSIGN("-="),
     MULASSIGN("*="),
     REMASSIGN("%="),
     RSHIFTASSIGN(">>="),
@@ -167,7 +167,7 @@ class TokenInfo {
      * Semantic text (if any). For example, the identifier name when the token
      * kind is IDENTIFIER. For tokens without a semantic text, it is simply its
      * string representation. For example, "+=" when the token kind is
-     * PLUS_ASSIGN.
+     * PLUSASSIGN.
      */
     private String image;
 

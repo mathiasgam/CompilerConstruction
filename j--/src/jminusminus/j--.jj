@@ -184,7 +184,7 @@ TOKEN:
 | < LE: "<=" >
 | < LNOT: "!" >
 | < MINUS: "-" >
-| < PLUS_ASSIGN: "+=" >
+| < PLUSASSIGN: "+=" >
 | < STAR: "*" >
 }
 
@@ -1130,7 +1130,7 @@ private JExpression expression(): {
  *   assignmentExpression ::= 
  *       conditionalAndExpression // level 13
  *           [( ASSIGN  // conditionalExpression
- *            | PLUS_ASSIGN // must be valid lhs
+ *            | PLUSASSIGN // must be valid lhs
  *            )
  *            assignmentExpression]
  * </pre>
@@ -1149,7 +1149,7 @@ private JExpression assignmentExpression(): {
             <ASSIGN> 
             rhs = assignmentExpression()
             { lhs = new JAssignOp( line, lhs, rhs ); } |
-            <PLUS_ASSIGN>
+            <PLUSASSIGN>
             rhs = assignmentExpression()
             { lhs = new JPlusAssignOp( line, lhs, rhs ); }
         ]
