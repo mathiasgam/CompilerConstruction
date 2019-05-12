@@ -13,20 +13,20 @@ modifiers ::= {PUBLIC | PROTECTED | PRIVATE | STATIC | ABSTRACT}
 
 interfaceDeclaration ::= INTERFACE IDENTIFIER
                             [EXTENDS IDENTIFIER {COMMA IDENTIFIER}]
-                            classBody
+                            interfaceBody
 
 classDeclaration ::= CLASS IDENTIFIER 
                        [EXTENDS qualifiedIdentifier]
-                       {IMPLEMENTS IDENTIFIER {COMMA IDENTIFIER}}
+                       { IMPLEMENTS IDENTIFIER { COMMA IDENTIFIER } }
                        classBody
 
 classBody ::= LCURLY
-                {modifiers memberDecl | STATIC block | block}
+                { modifiers memberDecl | STATIC block | block }
               RCURLY
 
 
 interfaceBody ::= LCURLY
-                     {modifiers interfaceMemberDeclaration}
+                     { modifiers interfaceMemberDeclaration }
                   RCURLY
 
 memberDecl ::= IDENTIFIER            // constructor
@@ -73,8 +73,8 @@ forUpdate ::= statementExpression {COMMA statementExpression}
 formalParameters ::= LPAREN 
                        [formalParameter {COMMA formalParameter}]
                      RPAREN
-formalParameter ::= [final] type IDENTIFIER
 
+formalParameter ::= [final] type IDENTIFIER
 
 parExpression ::= LPAREN expression RPAREN
 
@@ -103,10 +103,10 @@ statementExpression ::= expression // but must have side-effect, eg i++
 
 expression ::= assignmentExpression
 
-assignmentExpression ::= ternaryConditionalExpression  // must be a valid lhs
-                           [(ASSIGN | PLUS_ASSIGN | SUBEQUAL | DIVASSIGN | MULASSIGN | REMASSIGN) assignmentExpression]
+assignmentExpression ::= ternaryConditionalExpression  // level 13. Must be a valid lhs
+                           [(ASSIGN | PLUSASSIGN | SUBASSIGN | DIVASSIGN | MULASSIGN | REMASSIGN) assignmentExpression]
 
-ternaryConditionalExpression ::= conditionalOrExpression [TCON conditionalOrExpression COL conditionalOrExpression]
+ternaryConditionalExpression ::= conditionalOrExpression [TCON conditionalOrExpression COL conditionalOrExpression] // level 12
 
 conditionalOrExpression ::= conditionalAndExpression // level 11
                                {OR conditionalAndExpression}
@@ -146,7 +146,7 @@ simpleUnaryExpression ::= LNOT unaryExpression
                           RPAREN simpleUnaryExpression
                         | prefixExpression
 
-prefixExpression ::= {DEC} postfixExpression
+prefixExpression ::= {DEC | INC} postfixExpression
 
 postfixExpression ::= primary {selector} {DEC | INC}
 

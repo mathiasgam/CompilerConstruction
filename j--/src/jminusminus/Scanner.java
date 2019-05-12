@@ -213,7 +213,7 @@ class Scanner {
             nextCh();
             if (ch == '=') {
                 nextCh();
-                return new TokenInfo(PLUS_ASSIGN, line);
+                return new TokenInfo(PLUSASSIGN, line);
             } else if (ch == '+') {
                 nextCh();
                 return new TokenInfo(INC, line);
@@ -227,7 +227,7 @@ class Scanner {
                 return new TokenInfo(DEC, line);
             } else if (ch == '='){
                 nextCh();
-                return new TokenInfo(SUBEQUAL, line);
+                return new TokenInfo(SUBASSIGN, line);
             } else {
                 return new TokenInfo(MINUS, line);
             }

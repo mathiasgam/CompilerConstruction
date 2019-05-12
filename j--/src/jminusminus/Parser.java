@@ -1215,7 +1215,7 @@ public class Parser {
      *   assignmentExpression ::= 
      *       conditionalAndExpression // level 13
      *           [( ASSIGN  // conditionalExpression
-     *            | PLUS_ASSIGN // must be valid lhs
+     *            | PLUSASSIGN // must be valid lhs
      *            )
      *            assignmentExpression]
      * </pre>
@@ -1228,9 +1228,9 @@ public class Parser {
         JExpression lhs = ternaryConditionalExpression();
         if (have(ASSIGN)) {
             return new JAssignOp(line, lhs, assignmentExpression());
-        } else if (have(PLUS_ASSIGN)) {
+        } else if (have(PLUSASSIGN)) {
             return new JPlusAssignOp(line, lhs, assignmentExpression());
-        } else if (have(SUBEQUAL)) {
+        } else if (have(SUBASSIGN)) {
             return new JMinusAssignOp(line, lhs, assignmentExpression());
         } else if (have(MULASSIGN)) {
             return new JMulAssignOp(line, lhs, assignmentExpression());
