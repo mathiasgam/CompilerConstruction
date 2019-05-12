@@ -27,6 +27,7 @@ public class JMinusMinusTestRunner {
         suite.addTestSuite(InitializerBlockTest.class);
         suite.addTestSuite(TenaryTest.class);
         suite.addTestSuite(ForLoopTest.class);
+        suite.addTestSuite(EnhancedForLoopTest.class);
         return suite;
     }
 
