@@ -217,7 +217,7 @@ class JPostDecrementOp extends JUnaryExpression {
             arg = (JExpression) arg.analyze(context);
             if (arg.type().matchesExpected(Type.INT))
                 type = Type.INT;
-            else if (arg.type().matchesExpected(Type.DOUBLE)
+            else if (arg.type().matchesExpected(Type.DOUBLE))
                 type = Type.DOUBLE;
             else {
                 JAST.compilationUnit.reportSemanticError(line,
@@ -311,7 +311,7 @@ class JPostIncrementOp extends JUnaryExpression {
             arg = (JExpression) arg.analyze(context);
             if (arg.type().matchesExpected(Type.INT))
                 type = Type.INT;
-            else if (arg.type().matchesExpected(Type.DOUBLE)
+            else if (arg.type().matchesExpected(Type.DOUBLE))
             type = Type.DOUBLE;
             else {
                 JAST.compilationUnit.reportSemanticError(line,
@@ -404,7 +404,7 @@ class JPreIncrementOp extends JUnaryExpression {
             arg = (JExpression) arg.analyze(context);
             if (arg.type().matchesExpected(Type.INT))
                 type = Type.INT;
-            else if (arg.type().matchesExpected(Type.DOUBLE)
+            else if (arg.type().matchesExpected(Type.DOUBLE))
             type = Type.DOUBLE;
             else {
                 JAST.compilationUnit.reportSemanticError(line,
@@ -498,7 +498,7 @@ class JPreDecrementOp extends JUnaryExpression {
             arg = (JExpression) arg.analyze(context);
             if (arg.type().matchesExpected(Type.INT))
                 type = Type.INT;
-            else if (arg.type().matchesExpected(Type.DOUBLE)
+            else if (arg.type().matchesExpected(Type.DOUBLE))
             type = Type.DOUBLE;
             else {
                 JAST.compilationUnit.reportSemanticError(line,

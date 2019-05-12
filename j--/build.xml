@@ -445,9 +445,6 @@
         <delete file="${SRC_DIR}/jminusminus/Token.java" />
         <delete file="${SRC_DIR}/jminusminus/TokenMgrError.java" />
         <delete file="${SRC_DIR}/jminusminus/ParseException.java" />
-        <delete file="${SRC_DIR}/jminusminus/JavaCCParser.java" />
-        <delete file="${SRC_DIR}/jminusminus/JavaCCParserTokenManager.java" />
-        <delete file="${SRC_DIR}/jminusminus/JavaCCParserConstants.java" />
         <delete file="${SRC_DIR}/jminusminus/SimpleCharStream.java" />
         <delete>
             <fileset dir="${basedir}" includes="**/*.class"/>

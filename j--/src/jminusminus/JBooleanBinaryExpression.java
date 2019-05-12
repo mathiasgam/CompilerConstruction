@@ -117,7 +117,7 @@ class JEqualOp extends JBooleanBinaryExpression {
             output.addBranchInstruction(onTrue ? IF_ICMPEQ : IF_ICMPNE,
                     targetLabel);
         } else if (lhs.type() == Type.DOUBLE) {
-            output.addNoArgInstruction(DCMPG)
+            output.addNoArgInstruction(DCMPG);
             output.addBranchInstruction(onTrue ? IFEQ : IFNE,
                     targetLabel);
         }
@@ -187,7 +187,7 @@ class JNotEqualOp extends JBooleanBinaryExpression {
             output.addBranchInstruction(onTrue ? IF_ICMPNE : IF_ICMPEQ,
                     targetLabel);
         } else if (lhs.type() == Type.DOUBLE) {
-            output.addNoArgInstruction(DCMPG)
+            output.addNoArgInstruction(DCMPG);
             output.addBranchInstruction(onTrue ? IFNE : IFEQ,
                     targetLabel);
         }

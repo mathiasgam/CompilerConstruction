@@ -25,7 +25,6 @@ class Scanner {
     /** Keywords in j--. */
     private Hashtable<String, TokenKind> reserved;
 
-    /** Source characters. */
     private CharReader input;
 
     /** Next unscanned character. */
