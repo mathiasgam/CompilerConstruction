@@ -858,11 +858,10 @@ public class Parser {
 
     private JEnhancedForStatement enhancedForStatement (int line) {
         JFormalParameter item;
-        String collection;
+        JExpression collection;
         item = formalParameter();
         mustBe(COL);
-        mustBe(IDENTIFIER);
-        collection = scanner.previousToken().image();
+        collection = expression();
         mustBe(RPAREN);
         JStatement body = statement();
         return new JEnhancedForStatement(line, item, collection, body);

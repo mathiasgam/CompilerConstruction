@@ -155,12 +155,17 @@ class JConstructorDeclaration extends JMethodDeclaration implements JMember {
             output.addMemberAccessInstruction(INVOKESPECIAL,
                     ((JTypeDecl) context.classContext().definition())
                             .superType().jvmName(), "<init>", "()V");
+
+            for (JBlock block : definingClass.getClassBlocks()){
+                block.codegen(output);
+            }
         }
         // Field initializations
         for (JFieldDeclaration field : definingClass
                 .instanceFieldInitializations()) {
             field.codegenInitializations(output);
         }
+
         // And then the body
         body.codegen(output);
         output.addNoArgInstruction(RETURN);

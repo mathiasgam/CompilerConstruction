@@ -17,7 +17,7 @@ abstract class JExpression extends JStatement {
     protected Type type;
 
     /** Whether or not this expression is a statement. */
-    protected boolean isStatementExpression;
+    public boolean isStatementExpression;
 
     /**
      * Construct an AST node for an expression given its line number.
