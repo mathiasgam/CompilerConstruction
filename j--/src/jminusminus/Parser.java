@@ -1347,7 +1347,7 @@ public class Parser {
 
     private JExpression relationalExpression() {
         int line = scanner.token().line();
-        JExpression lhs = additiveExpression();
+        JExpression lhs = shiftExpression();
         if (have(GT)) {
             return new JGreaterThanOp(line, lhs, additiveExpression());
         } else if (have(LT)) {
@@ -1361,6 +1361,24 @@ public class Parser {
         } else {
             return lhs;
         }
+    }
+
+    private JExpression shiftExpression() {
+        int line = scanner.token().line();
+        boolean more = true;
+        JExpression lhs = additiveExpression();
+        while (more) {
+            if (have(LSHIFT)) {
+                lhs = new JLeftShiftOp(line, lhs, additiveExpression());
+            } else if (have(RSHIFT)) {
+                lhs = new JRightShiftOp(line, lhs, additiveExpression());
+            } else if (have(RLOGSHIFT)) {
+                lhs = new JLogRightShiftOp(line, lhs, additiveExpression());
+            } else {
+                more = false;
+            }
+        }
+        return lhs;
     }
 
     /**

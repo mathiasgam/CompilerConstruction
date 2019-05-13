@@ -37,6 +37,10 @@ public class OperatorsTest extends TestCase {
 
         // Double test
         this.assertEquals(10.0d, operators.addDouble(8.0d, 2.0f));
+        this.assertEquals(2.0d, operators.addDouble(0d, 2.0f));
+        this.assertEquals(10.0d, operators.addDouble(8d, 2.0f));
+        this.assertEquals(2.8d, operators.addDouble(.8d, 2.0f));
+        this.assertEquals(2.02d, operators.addDouble(.02d, 2.0f));
         this.assertEquals(6.0d, operators.subDouble(8.0d, 2.0f));
         this.assertEquals(16.0d, operators.mulDouble(8.0d, 2.0f));
         this.assertEquals(4.0d, operators.divDouble(8.0d, 2.0f));

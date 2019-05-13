@@ -340,3 +340,171 @@ class JRemainderOp extends JBinaryExpression {
         }
     }
 }
+
+class JLeftShiftOp extends JBinaryExpression {
+
+    /**
+     * Construct an AST node for a left shift expression given its line number,
+     * and the lhs and rhs operands.
+     *
+     * @param line
+     *            line in which the addition expression occurs in the source
+     *            file.
+     * @param lhs
+     *            the lhs operand.
+     * @param rhs
+     *            the rhs operand.
+     */
+
+    public JLeftShiftOp(int line, JExpression lhs, JExpression rhs) {
+        super(line, "<<", lhs, rhs);
+    }
+
+    /**
+     *
+     * @param context
+     *            context in which names are resolved.
+     * @return the analyzed (and possibly rewritten) AST subtree.
+     */
+
+    public JExpression analyze(Context context) {
+        lhs = (JExpression) lhs.analyze(context);
+        rhs = (JExpression) rhs.analyze(context);
+        if (lhs.type() == Type.INT && rhs.type() == Type.INT) {
+            type = Type.INT;
+        } else {
+            type = Type.ANY;
+            JAST.compilationUnit.reportSemanticError(line(),
+                    "Invalid operand types for <<");
+        }
+        return this;
+    }
+
+    /**
+     *
+     * @param output
+     *            the code emitter (basically an abstraction for producing the
+     *            .class file).
+     */
+
+    public void codegen(CLEmitter output) {
+        lhs.codegen(output);
+        rhs.codegen(output);
+        if (type == Type.INT) {
+            output.addNoArgInstruction(ISHL);
+        }
+    }
+
+}
+
+class JRightShiftOp extends JBinaryExpression {
+
+    /**
+     * Construct an AST node for a right shift expression given its line number,
+     * and the lhs and rhs operands.
+     *
+     * @param line
+     *            line in which the addition expression occurs in the source
+     *            file.
+     * @param lhs
+     *            the lhs operand.
+     * @param rhs
+     *            the rhs operand.
+     */
+
+    public JRightShiftOp(int line, JExpression lhs, JExpression rhs) {
+        super(line, ">>", lhs, rhs);
+    }
+
+    /**
+     *
+     * @param context
+     *            context in which names are resolved.
+     * @return the analyzed (and possibly rewritten) AST subtree.
+     */
+
+    public JExpression analyze(Context context) {
+        lhs = (JExpression) lhs.analyze(context);
+        rhs = (JExpression) rhs.analyze(context);
+        if (lhs.type() == Type.INT && rhs.type() == Type.INT) {
+            type = Type.INT;
+        } else {
+            type = Type.ANY;
+            JAST.compilationUnit.reportSemanticError(line(),
+                    "Invalid operand types for >>");
+        }
+        return this;
+    }
+
+    /**
+     *
+     * @param output
+     *            the code emitter (basically an abstraction for producing the
+     *            .class file).
+     */
+
+    public void codegen(CLEmitter output) {
+        lhs.codegen(output);
+        rhs.codegen(output);
+        if (type == Type.INT) {
+            output.addNoArgInstruction(ISHR);
+        }
+    }
+
+}
+
+class JLogRightShiftOp extends JBinaryExpression {
+
+    /**
+     * Construct an AST node for a logical right shift expression given its line number,
+     * and the lhs and rhs operands.
+     *
+     * @param line
+     *            line in which the addition expression occurs in the source
+     *            file.
+     * @param lhs
+     *            the lhs operand.
+     * @param rhs
+     *            the rhs operand.
+     */
+
+    public JLogRightShiftOp(int line, JExpression lhs, JExpression rhs) {
+        super(line, ">>>", lhs, rhs);
+    }
+
+    /**
+     *
+     * @param context
+     *            context in which names are resolved.
+     * @return the analyzed (and possibly rewritten) AST subtree.
+     */
+
+    public JExpression analyze(Context context) {
+        lhs = (JExpression) lhs.analyze(context);
+        rhs = (JExpression) rhs.analyze(context);
+        if (lhs.type() == Type.INT && rhs.type() == Type.INT) {
+            type = Type.INT;
+        } else {
+            type = Type.ANY;
+            JAST.compilationUnit.reportSemanticError(line(),
+                    "Invalid operand types for >>>");
+        }
+        return this;
+    }
+
+    /**
+     *
+     * @param output
+     *            the code emitter (basically an abstraction for producing the
+     *            .class file).
+     */
+
+    public void codegen(CLEmitter output) {
+        lhs.codegen(output);
+        rhs.codegen(output);
+        if (type == Type.INT) {
+            output.addNoArgInstruction(IUSHR);
+        }
+    }
+
+}
