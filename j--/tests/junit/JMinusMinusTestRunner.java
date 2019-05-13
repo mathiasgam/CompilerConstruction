@@ -16,18 +16,18 @@ public class JMinusMinusTestRunner {
 
     public static Test suite() {
         TestSuite suite = new TestSuite();
-        //suite.addTestSuite(HelloWorldTest.class);
-        //suite.addTestSuite(FactorialTest.class);
-        //suite.addTestSuite(GCDTest.class);
-        //suite.addTestSuite(SeriesTest.class);
-        //suite.addTestSuite(ClassesTest.class);
-        //suite.addTestSuite(DivisionTest.class);
-        //suite.addTestSuite(RemainderTest.class);
+        suite.addTestSuite(HelloWorldTest.class);
+        suite.addTestSuite(FactorialTest.class);
+        suite.addTestSuite(GCDTest.class);
+        suite.addTestSuite(SeriesTest.class);
+        suite.addTestSuite(ClassesTest.class);
+        suite.addTestSuite(DivisionTest.class);
+        suite.addTestSuite(RemainderTest.class);
         //suite.addTestSuite(ShiftLeftTest.class);
-        //suite.addTestSuite(InitializerBlockTest.class);
-        //suite.addTestSuite(TenaryTest.class);
-        //suite.addTestSuite(ForLoopTest.class);
-        //suite.addTestSuite(EnhancedForLoopTest.class);
+        suite.addTestSuite(InitializerBlockTest.class);
+        suite.addTestSuite(TenaryTest.class);
+        suite.addTestSuite(ForLoopTest.class);
+        suite.addTestSuite(EnhancedForLoopTest.class);
         suite.addTestSuite(OperatorsTest.class);
         return suite;
     }

@@ -173,6 +173,7 @@ class JMethodDeclaration
             LocalVariableDefn defn = new LocalVariableDefn(param.type(), 
                 this.context.nextOffset());
             defn.initialize();
+            // if type size is double, use double increment offset
             if (param.type() == Type.DOUBLE){
                 this.context.nextOffset();
             }
