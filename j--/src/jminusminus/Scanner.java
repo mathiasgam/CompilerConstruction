@@ -8,6 +8,8 @@ import java.io.IOException;
 import java.io.LineNumberReader;
 import java.util.Hashtable;
 import static jminusminus.TokenKind.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * A lexical analyzer for j--, that has no backtracking mechanism.
@@ -356,15 +358,53 @@ class Scanner {
             }
             return new TokenInfo(STRING_LITERAL, buffer.toString(), line);
         case '.':
+            buffer = new StringBuffer();
+            buffer.append(ch);
             nextCh();
+            if (Pattern.compile("\\d").matcher(Character.toString(ch)).find()) {
+            //if (ch == '0' || ch == '1' || ch == '2' || ch == '3' || ch == '4' || ch == '5' || ch == '6' || ch == '7' || ch == '8' || ch == '9') {
+                while (isDigit(ch)) {
+                    buffer.append(ch);
+                    nextCh();
+                }
+                if (ch == 'd' || ch == 'D') {
+                    buffer.append(ch);
+                    nextCh();
+                    return new TokenInfo(DOUBLE_LITERAL,buffer.toString(), line);
+                }
+                if (ch == 'e') {
+                    buffer.append(ch);
+                    nextCh();
+                    if(ch == '+' || ch == '-') {
+                        buffer.append(ch);
+                        nextCh();
+                    }
+                    if (isDigit(ch)) {
+                        while (isDigit(ch)) {
+                            buffer.append(ch);
+                            nextCh();
+                        }
+                        if (ch == 'd' | ch == 'D') {
+                            buffer.append(ch);
+                            nextCh();
+                            return new TokenInfo(DOUBLE_LITERAL, buffer.toString(), line);
+                        } else {
+                            reportScannerError("Expected \"d\" found \"%s\"",ch);
+                        }
+                    } else
+                        reportScannerError("Unexpected token found in exponential");
+                }
+            }
             return new TokenInfo(DOT, line);
         case EOFCH:
             return new TokenInfo(EOF, line);
         case '0':
-            // Handle only simple decimal integers for now.
             nextCh();
             buffer = new StringBuffer();
-            if (ch == '.') {
+            if (ch == 'd' || ch == 'D') {
+                nextCh();
+                return new TokenInfo(DOUBLE_LITERAL,"0d", line);
+            } else if (ch == '.') {
                 buffer.append(ch);
                 nextCh();
                 if (isDigit(ch)) {
@@ -372,7 +412,7 @@ class Scanner {
                         buffer.append(ch);
                         nextCh();
                     }
-                    if (ch == 'd' | ch == 'D') {
+                    if (ch == 'd' || ch == 'D') {
                         buffer.append(ch);
                         nextCh();
                         return new TokenInfo(DOUBLE_LITERAL, buffer.toString(), line);
@@ -420,7 +460,11 @@ class Scanner {
                 buffer.append(ch);
                 nextCh();
             }
-            if (ch == '.') {
+            if (ch == 'd' || ch == 'D') {
+                buffer.append(ch);
+                nextCh();
+                return new TokenInfo(DOUBLE_LITERAL,buffer.toString(), line);
+            } else if (ch == '.') {
                 buffer.append(ch);
                 nextCh();
                 if (isDigit(ch)) {
