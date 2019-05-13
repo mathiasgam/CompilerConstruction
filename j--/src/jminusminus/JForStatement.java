@@ -84,7 +84,7 @@ class JForStatement extends JStatement {
 
         // in case everything is null, just return
         if (init == null && term == null && body == null && inc == null){
-            return
+            return;
         }
 
         // if init is not empty, then generate code for initialization
