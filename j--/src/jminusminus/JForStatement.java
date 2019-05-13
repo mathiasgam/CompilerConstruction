@@ -82,6 +82,11 @@ class JForStatement extends JStatement {
         String labelTest = output.createLabel();
         String labelEnd = output.createLabel();
 
+        // in case everything is null, just return
+        if (init == null && term == null && body == null && inc == null){
+            return;
+        }
+
         // if init is not empty, then generate code for initialization
         if (init != null){
             init.codegen(output);

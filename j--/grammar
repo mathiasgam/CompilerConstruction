@@ -1,175 +1,233 @@
 // A grammar for j--, suitable for parsing by recursive descent
 // Copyright 2013 Bill Campbell, Swami Iyer and Bahar Akbal-Delibas
 
-compilationUnit ::= [PACKAGE qualifiedIdentifier SEMI]
-                    {IMPORT  qualifiedIdentifier SEMI}
-                    {typeDeclaration} EOF 
+compilationUnit ::=
+	[PACKAGE qualifiedIdentifier SEMI]
+    {IMPORT  qualifiedIdentifier SEMI}
+    {typeDeclaration} EOF
 
-qualifiedIdentifier ::= IDENTIFIER {DOT IDENTIFIER}
+qualifiedIdentifier ::=
+	IDENTIFIER {DOT IDENTIFIER}
 
-typeDeclaration ::= modifiers ( classDeclaration | interfaceDeclaration )
+typeDeclaration ::=
+	modifiers ( classDeclaration | interfaceDeclaration )
 
-modifiers ::= {PUBLIC | PROTECTED | PRIVATE | STATIC | ABSTRACT}
+modifiers ::=
+	{PUBLIC | PROTECTED | PRIVATE | STATIC | ABSTRACT}
 
-interfaceDeclaration ::= INTERFACE IDENTIFIER
-                            [EXTENDS IDENTIFIER {COMMA IDENTIFIER}]
-                            interfaceBody
+interfaceDeclaration ::=
+	INTERFACE IDENTIFIER
+    [EXTENDS IDENTIFIER {COMMA IDENTIFIER}]
+    interfaceBody
 
-classDeclaration ::= CLASS IDENTIFIER 
-                       [EXTENDS qualifiedIdentifier]
-                       { IMPLEMENTS IDENTIFIER { COMMA IDENTIFIER } }
-                       classBody
+classDeclaration ::=
+	CLASS IDENTIFIER
+    [EXTENDS qualifiedIdentifier]
+    { IMPLEMENTS IDENTIFIER { COMMA IDENTIFIER } }
+    classBody
 
-classBody ::= LCURLY
-                { modifiers memberDecl | STATIC block | block }
-              RCURLY
-
-
-interfaceBody ::= LCURLY
-                     { modifiers interfaceMemberDeclaration }
-                  RCURLY
-
-memberDecl ::= IDENTIFIER            // constructor
-                 formalParameters
-                    [THROWS qualifiedIdentifier {COMMA qualifiedIdentifier}]
-                    block
-             | (VOID | type) IDENTIFIER  // method
-                 formalParameters
-                    [THROWS qualifiedIdentifier {COMMA qualifiedIdentifier}]
-                    (block | SEMI)
-             | type variableDeclarators SEMI // field
-
-interfaceMemberDeclaration ::= (VOID | type) IDENTIFIER
-                                    formalParameters
-                                        [THROWS qualifiedIdentifier {COMMA qualifiedIdentifier}]
-                                        SEMI
-                               | type variableDeclarators SEMI
+classBody ::=
+	LCURLY
+	    { modifiers memberDecl | STATIC block | block }
+    RCURLY
 
 
-block ::= LCURLY {blockStatement} RCURLY 
+interfaceBody ::=
+	LCURLY
+        { modifiers interfaceMemberDeclaration }
+    RCURLY
 
-blockStatement ::= localVariableDeclarationStatement
-                 | statement
+memberDecl ::=
+	IDENTIFIER                  // constructor
+        formalParameters
+        [THROWS qualifiedIdentifier {COMMA qualifiedIdentifier}]
+        block
+    | (VOID | type) IDENTIFIER  // method
+        formalParameters
+        [THROWS qualifiedIdentifier {COMMA qualifiedIdentifier}]
+        (block | SEMI)
+  | type variableDeclarators SEMI // field
 
-statement ::= block
-            | IF parExpression statement [ELSE statement]
-            | FOR LPAREN forExp RPAREN statement
-            | WHILE parExpression statement 
-            | RETURN [expression] SEMI
-            | THROW expression SEMI
-            | SEMI 
-            | statementExpression SEMI
-            | TRY block {CATCH LPAREN formalParameter RPAREN block} [FINALLY block] // if no catch final is mandatory
+interfaceMemberDeclaration ::=
+	(VOID | type) IDENTIFIER
+        formalParameters
+            [THROWS qualifiedIdentifier {COMMA qualifiedIdentifier}] SEMI
+    | type variableDeclarators SEMI
 
-forExp ::= [forInit] SEMI [expression] SEMI [forUpdate]
-         | (formalParameter COL IDENTIFIER)
 
-forInit ::= statementExpression {COMMA statementExpression}
-          | [final] type variableDeclarators
+block ::=
+	LCURLY {blockStatement} RCURLY
 
-forUpdate ::= statementExpression {COMMA statementExpression}
+blockStatement ::=
+	localVariableDeclarationStatement
+  | statement
 
-formalParameters ::= LPAREN 
-                       [formalParameter {COMMA formalParameter}]
-                     RPAREN
+statement ::=
+	block
+  | IF parExpression statement [ELSE statement]
+  | FOR LPAREN forExp RPAREN statement
+  | WHILE parExpression statement
+  | RETURN [expression] SEMI
+  | THROW expression SEMI
+  | SEMI
+  | statementExpression SEMI
+  | TRY block {CATCH LPAREN formalParameter RPAREN block} [FINALLY block] // if no catch final is mandatory
 
-formalParameter ::= [final] type IDENTIFIER
+forExp ::=
+	[forInit] SEMI [expression] SEMI [forUpdate]
+  | (formalParameter COL IDENTIFIER)
 
-parExpression ::= LPAREN expression RPAREN
+forInit ::=
+	statementExpression {COMMA statementExpression}
+  | [final] type variableDeclarators
 
-localVariableDeclarationStatement ::= type variableDeclarators SEMI
+forUpdate ::=
+	statementExpression {COMMA statementExpression}
 
-variableDeclarators ::= variableDeclarator {COMMA variableDeclarator}
+formalParameters ::=
+	LPAREN
+        [formalParameter {COMMA formalParameter}]
+    RPAREN
 
-variableDeclarator ::= IDENTIFIER [ASSIGN variableInitializer]
-                    
-variableInitializer ::= arrayInitializer | expression
+formalParameter ::=
+	[final] type IDENTIFIER
 
-arrayInitializer ::= LCURLY 
-                       [variableInitializer {COMMA variableInitializer}]
-                     RCURLY 
+parExpression ::=
+	LPAREN expression RPAREN
 
-arguments ::= LPAREN [expression {COMMA expression}] RPAREN
+localVariableDeclarationStatement ::=
+	type variableDeclarators SEMI
 
-type ::= referenceType | basicType
+variableDeclarators ::=
+	variableDeclarator {COMMA variableDeclarator}
 
-basicType ::= BOOLEAN | CHAR | INT | DOUBLE
+variableDeclarator ::=
+	IDENTIFIER [ASSIGN variableInitializer]
 
-referenceType ::= basicType LBRACK RBRACK {LBRACK RBRACK}
-                | qualifiedIdentifier {LBRACK RBRACK}
+variableInitializer ::=
+	arrayInitializer | expression
 
-statementExpression ::= expression // but must have side-effect, eg i++
+arrayInitializer ::=
+	LCURLY
+        [variableInitializer {COMMA variableInitializer}]
+    RCURLY
 
-expression ::= assignmentExpression
+arguments ::=
+	LPAREN [expression {COMMA expression}] RPAREN
 
-assignmentExpression ::= ternaryConditionalExpression  // level 13. Must be a valid lhs
-                           [(ASSIGN | PLUSASSIGN | SUBASSIGN | DIVASSIGN | MULASSIGN | REMASSIGN) assignmentExpression]
+type ::=
+	referenceType | basicType
 
-ternaryConditionalExpression ::= conditionalOrExpression [TCON conditionalOrExpression COL conditionalOrExpression] // level 12
+basicType ::=
+	BOOLEAN | CHAR | INT | DOUBLE
 
-conditionalOrExpression ::= conditionalAndExpression // level 11
-                               {OR conditionalAndExpression}
+referenceType ::=
+	basicType LBRACK RBRACK {LBRACK RBRACK}
+  | qualifiedIdentifier {LBRACK RBRACK}
 
-conditionalAndExpression ::= bitwiseOrExpression // level 10
-                               {LAND bitwiseOrExpression}
+statementExpression ::=
+	expression // but must have side-effect, eg i++
 
-bitwiseOrExpression ::= bitwiseXORExpression {BOR bitwiseXORExpression} // level 9
+expression ::=
+	assignmentExpression
 
-bitwiseXORExpression ::= bitwiseANDExpression {BXOR bitwiseANDExpression} // level 8
+assignmentExpression ::=
+	ternaryConditionalExpression  // level 13. Must be a valid lhs
+        [(ASSIGN | PLUSASSIGN | SUBASSIGN | DIVASSIGN | MULASSIGN | REMASSIGN) assignmentExpression]
 
-bitwiseANDExpression ::= equalityExpression {BAND equalityExpression} // level 7
+ternaryConditionalExpression ::=
+	conditionalOrExpression
+        [TCON conditionalOrExpression COL conditionalOrExpression] // level 12
 
-equalityExpression ::= relationalExpression  // level 6
-                         {(EQUAL | NOTEQUAL) relationalExpression}
+conditionalOrExpression ::=
+	conditionalAndExpression // level 11
+        {OR conditionalAndExpression}
 
-relationalExpression ::= shiftExpressions       // level 5
-                           [(GT | LE) shiftExpressions
-                           | INSTANCEOF referenceType]
+conditionalAndExpression ::=
+	bitwiseOrExpression // level 10
+        {LAND bitwiseOrExpression}
 
-shiftExpressions ::= additiveExpression {(LSHIFT | RSHIFT | RLOGSHIFT) additiveExpression} // level 4
+bitwiseOrExpression ::=
+	bitwiseXORExpression
+        {BOR bitwiseXORExpression} // level 9
 
-additiveExpression ::= multiplicativeExpression // level 3
-                         {(PLUS | MINUS) multiplicativeExpression}
+bitwiseXORExpression ::=
+	bitwiseANDExpression
+        {BXOR bitwiseANDExpression} // level 8
 
-multiplicativeExpression ::= unaryExpression       // level 2
-                               {(STAR | DIV | REM) unaryExpression}
+bitwiseANDExpression ::=
+	equalityExpression
+        {BAND equalityExpression} // level 7
 
-unaryExpression ::= INC unaryExpression  // level 1
-                  | MINUS unaryExpression
-                  | simpleUnaryExpression
+equalityExpression ::=
+	relationalExpression  // level 6
+        {(EQUAL | NOTEQUAL) relationalExpression}
 
-simpleUnaryExpression ::= LNOT unaryExpression
-                        | LPAREN basicType RPAREN unaryExpression //casted
-                        | LPAREN // casted               
-                            referenceType
-                          RPAREN simpleUnaryExpression
-                        | prefixExpression
+relationalExpression ::=
+	shiftExpressions       // level 5
+        [(GT | LE) shiftExpressions | INSTANCEOF referenceType]
 
-prefixExpression ::= {DEC | INC} postfixExpression
+shiftExpressions ::=
+	additiveExpression
+        {(LSHIFT | RSHIFT | RLOGSHIFT) additiveExpression} // level 4
 
-postfixExpression ::= primary {selector} {DEC | INC}
+additiveExpression ::=
+	multiplicativeExpression // level 3
+        {(PLUS | MINUS) multiplicativeExpression}
 
-selector ::= DOT qualifiedIdentifier [arguments]
-           | LBRACK expression RBRACK
+multiplicativeExpression ::=
+	unaryExpression       // level 2
+        {(STAR | DIV | REM) unaryExpression}
 
-primary ::= parExpression
-          | THIS [arguments]
-          | SUPER ( arguments 
-                  | DOT IDENTIFIER [arguments] 
-                  )
-          | literal
-          | NEW creator
-          | qualifiedIdentifier [arguments]
+unaryExpression ::=
+	INC unaryExpression  // level 1
+  | MINUS unaryExpression
+  | simpleUnaryExpression
 
-creator ::= (basicType | qualifiedIdentifier) 
-              ( arguments
-              | LBRACK RBRACK {LBRACK RBRACK} [arrayInitializer]
-              | newArrayDeclarator
-              )
+simpleUnaryExpression ::=
+	LNOT unaryExpression
+  | LPAREN basicType RPAREN unaryExpression //casted
+  | LPAREN // casted
+      referenceType
+    RPAREN simpleUnaryExpression
+  | prefixExpression
 
-newArrayDeclarator ::= LBRACK expression RBRACK 
-                         {LBRACK expression RBRACK} {LBRACK RBRACK}
+prefixExpression ::=
+	{DEC | INC} postfixExpression
 
-literal ::= INT_LITERAL | CHAR_LITERAL | STRING_LITERAL
-          | TRUE        | FALSE        | NULL
-          | DOUBLE_LITERAL
+postfixExpression ::=
+	primary {selector} {DEC | INC}
+
+selector ::=
+	DOT qualifiedIdentifier [arguments]
+  | LBRACK expression RBRACK
+
+primary ::=
+	parExpression
+  | THIS [arguments]
+  | SUPER ( arguments
+          | DOT IDENTIFIER [arguments]
+          )
+  | literal
+  | NEW creator
+  | qualifiedIdentifier [arguments]
+
+creator ::=
+	(basicType | qualifiedIdentifier)
+    ( arguments
+    | LBRACK RBRACK {LBRACK RBRACK} [arrayInitializer]
+    | newArrayDeclarator
+    )
+
+newArrayDeclarator ::=
+	LBRACK expression RBRACK
+    {LBRACK expression RBRACK} {LBRACK RBRACK}
+
+literal ::=
+	INT_LITERAL
+  | CHAR_LITERAL
+  | STRING_LITERAL
+  | TRUE
+  | FALSE
+  | NULL
+  | DOUBLE_LITERAL

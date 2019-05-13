@@ -117,8 +117,6 @@ class JEnhancedForStatement extends JStatement {
         forCondition.codegen(output, end, false);
 
         forBody.codegen(output);
-        // increment the index variable
-        //element.codegen(output);
 
         // Unconditional jump back up to test
         output.addBranchInstruction(GOTO, test);
